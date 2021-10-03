@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"E:\\GitProject\\CounterStrike_DEMO\\Source\\CounterStrike_DEMO\\CounterStrike_DEMO.Build.cs",
+		"E:\\GitProject\\CounterStrike_DEMO\\Source\\CounterStrike_DEMO.Target.cs",
+		"E:\\GitProject\\CounterStrike_DEMO\\Source\\CounterStrike_DEMOEditor.Target.cs"
+	],
+	"EngineVersion": "4.26.2"
+}
