@@ -8,6 +8,7 @@
 #include "Components/CapsuleComponent.h"
 #include "Weapon_Rifle.h"
 #include "UObject/ConstructorHelpers.h"
+#include "HealthComponent.h"
 #include "CounterStrike_DEMO/CounterStrike_DEMO.h"
 
 APlayerCharacter::APlayerCharacter()
@@ -22,10 +23,16 @@ APlayerCharacter::APlayerCharacter()
 
 	PlayerCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("PlayerCamera"));
 	PlayerCamera->SetupAttachment(SpringArmComp);
+
+	HealthComp = CreateDefaultSubobject<UHealthComponent>(TEXT("HealthComp"));
 	
 	GetCapsuleComponent()->SetCollisionResponseToChannel(WEAPONCOLLISION, ECR_Ignore);
 	GetMovementComponent()->GetNavAgentPropertiesRef().bCanCrouch = true;
 	WeaponAttachSocketName = "Rifle_rSocket";
+
+	//初始化瞄准值
+	ZoomedFOV = 65.f;
+	ZoomInterpSpeed = 20.f;
 
 	static ConstructorHelpers::FObjectFinder<UAnimMontage> ReloadMontageObject(TEXT("AnimMontage'/Game/Animation/Montage_Reload.Montage_Reload'"));
 	if (ReloadMontageObject.Succeeded())
@@ -38,6 +45,9 @@ APlayerCharacter::APlayerCharacter()
 void APlayerCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	DefaultFOV = PlayerCamera->FieldOfView;
+	HealthComp->OnHealthChanged.AddDynamic(this, &APlayerCharacter::OnHealthChanged);
 	
 	FActorSpawnParameters SpawnParam;
 	SpawnParam.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
@@ -49,11 +59,27 @@ void APlayerCharacter::BeginPlay()
 	}
 }
 
+void APlayerCharacter::OnHealthChanged(UHealthComponent* OwningHealthComp, float Health, float HealthDelta, const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser)
+{
+	if (Health <= 0.f && !bDied)
+	{
+		bDied = true;
+		GetMovementComponent()->StopMovementImmediately();
+		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+		//等待销毁时解除玩家控制
+		DetachFromControllerPendingDestroy();
+		SetLifeSpan(10.f);
+	}
+}
+
 // Called every frame
 void APlayerCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	float TargetFOV = bWantsToZoom ? ZoomedFOV : DefaultFOV;
+	float NewFOV = FMath::FInterpTo(PlayerCamera->FieldOfView, TargetFOV, DeltaTime, ZoomInterpSpeed);
+	PlayerCamera->SetFieldOfView(NewFOV);
 }
 
 // Called to bind functionality to input
@@ -72,6 +98,8 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	PlayerInputComponent->BindAction("Crouch", IE_Released, this, &APlayerCharacter::EndCrouch);
 	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &APlayerCharacter::StartFire);
 	PlayerInputComponent->BindAction("Fire", IE_Released, this, &APlayerCharacter::EndFire);
+	PlayerInputComponent->BindAction("Zoom", IE_Pressed, this, &APlayerCharacter::StartZoom);
+	PlayerInputComponent->BindAction("Zoom",IE_Released, this, &APlayerCharacter::EndZoom);
 
 	PlayerInputComponent->BindAction("Reload", IE_Pressed, this, &APlayerCharacter::WeaponReload);
 }
@@ -125,12 +153,32 @@ void APlayerCharacter::EndFire()
 	CurrentWeapon->StopFire();
 }
 
+void APlayerCharacter::StartZoom()
+{
+	bWantsToZoom = true;
+}
+
+void APlayerCharacter::EndZoom()
+{
+	bWantsToZoom = false;
+}
+
 void APlayerCharacter::WeaponReload()
 {
-	if (ReloadMontage)
+	if (CurrentWeapon)
 	{
-		//int32 Count = ReloadMontage->CompositeSections.Num();
-		PlayAnimMontage(ReloadMontage, 1.f, "Default");
+		if (CurrentWeapon->ActualAmmo <= 0)
+		{
+			return;
+		}
+		if (ReloadMontage)
+		{
+			//int32 Count = ReloadMontage->CompositeSections.Num();
+			PlayAnimMontage(ReloadMontage, 1.f, "Default");
+	
+			CurrentWeapon->ActualAmmo = CurrentWeapon->ActualAmmo - CurrentWeapon->DefaultMag + CurrentWeapon->ActualMag;
+			CurrentWeapon->ActualMag = CurrentWeapon->DefaultMag;
+		}
 	}
 }
 

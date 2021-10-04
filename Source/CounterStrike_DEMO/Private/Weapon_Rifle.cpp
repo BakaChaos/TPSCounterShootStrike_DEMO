@@ -10,6 +10,9 @@ AWeapon_Rifle::AWeapon_Rifle()
 {
 	BaseDamage = 20.f;
 	RateOfFire = 300.f;
+
+	DefaultAmmo = 180;
+	DefaultMag = 30;
 }
 
 void AWeapon_Rifle::BeginPlay()
@@ -17,6 +20,9 @@ void AWeapon_Rifle::BeginPlay()
 	Super::BeginPlay();
 	//将射速转换成时间单位
 	TimeBetweenFire = 60 / RateOfFire;
+
+	ActualAmmo = DefaultAmmo;
+	ActualMag = DefaultMag;
 }
 
 

@@ -52,9 +52,17 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
 	UParticleSystem* FleshImapctEffect;
 
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	int DefaultAmmo;
+	int DefaultMag;
+	UPROPERTY(BlueprintReadOnly, Category = "Weapon")
+	int ActualMag;
+	UPROPERTY(BlueprintReadOnly, Category = "Weapon")
+	int ActualAmmo;
 
 protected:
 	// Called when the game starts or when spawned

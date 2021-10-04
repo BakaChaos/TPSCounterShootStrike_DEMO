@@ -34,50 +34,56 @@ void AWeaponBase::BeginPlay()
 
 void AWeaponBase::Fire()
 {
-	AActor* WeaponOwner = GetOwner();
-	if (WeaponOwner)
+	if (ActualMag > 0)
 	{
-		FVector EyeLocation;
-		FRotator EyeRotation;
-		WeaponOwner->GetActorEyesViewPoint(EyeLocation, EyeRotation);
-		//射击方向
-		FVector ShootDirection = EyeRotation.Vector();
-		FVector TraceEnd = EyeLocation + (ShootDirection * 10000);
-
-		//碰撞条件
-		FCollisionQueryParams ColliParams;
-		ColliParams.AddIgnoredActor(WeaponOwner);
-		ColliParams.AddIgnoredActor(this);
-		ColliParams.bTraceComplex = true;
-		ColliParams.bReturnPhysicalMaterial = true;
-
-		FVector TraceEndPoint = TraceEnd;
-
-		float ActualDamage = BaseDamage;
-
-		EPhysicalSurface SurfaceType = SurfaceType_Default;
-
-		FHitResult WeaponHit;
-		if (GetWorld()->LineTraceSingleByChannel(WeaponHit, EyeLocation, TraceEndPoint, WEAPONCOLLISION, ColliParams))
+		AActor* WeaponOwner = GetOwner();
+		if (WeaponOwner)
 		{
-			AActor* HitActor = WeaponHit.GetActor();
-
-			SurfaceType = WeaponHit.PhysMaterial.Get()->SurfaceType;
-
-			if (SurfaceType == SURFACETYPE_FLESHVULNERABLE)
+			FVector MuzzleLocation = WeaponMesh->GetSocketLocation(MuzzleSocketName);
+			FVector EyeLocation;
+			FRotator EyeRotation;
+			WeaponOwner->GetActorEyesViewPoint(EyeLocation, EyeRotation);
+			//射击方向
+			FVector ShootDirection = EyeRotation.Vector();
+			FVector TraceEnd = EyeLocation + (ShootDirection * 10000);
+	
+			//碰撞条件
+			FCollisionQueryParams ColliParams;
+			ColliParams.AddIgnoredActor(WeaponOwner);
+			ColliParams.AddIgnoredActor(this);
+			ColliParams.bTraceComplex = true;
+			ColliParams.bReturnPhysicalMaterial = true;
+	
+			FVector TraceEndPoint = TraceEnd;
+	
+			float ActualDamage = BaseDamage;
+	
+			EPhysicalSurface SurfaceType = SurfaceType_Default;
+	
+			FHitResult WeaponHit;
+			if (GetWorld()->LineTraceSingleByChannel(WeaponHit, EyeLocation, TraceEndPoint, WEAPONCOLLISION, ColliParams))
 			{
-				ActualDamage *= 1.25f;
+				AActor* HitActor = WeaponHit.GetActor();
+	
+				SurfaceType = WeaponHit.PhysMaterial.Get()->SurfaceType;
+	
+				if (SurfaceType == SURFACETYPE_FLESHVULNERABLE)
+				{
+					ActualDamage *= 1.25f;
+				}
+	
+				//给被射中的对象加上伤害信息
+				UGameplayStatics::ApplyPointDamage(HitActor, ActualDamage, ShootDirection, WeaponHit, WeaponOwner->GetInstigatorController(), this, DamageType);
+				TraceEndPoint = WeaponHit.ImpactPoint;
 			}
+			PlayFireEffect(TraceEndPoint);
+			PlayFireImpact(SurfaceType, TraceEndPoint);
 
-			//给被射中的对象加上伤害信息
-			UGameplayStatics::ApplyPointDamage(HitActor, ActualDamage, ShootDirection, WeaponHit, WeaponOwner->GetInstigatorController(), this, DamageType);
-			TraceEndPoint = WeaponHit.ImpactPoint;
+			ActualMag--;
+	
+			//获得最后一次的开火时间
+			LastTimeFire = GetWorld()->TimeSeconds;
 		}
-		PlayFireEffect(TraceEndPoint);
-		PlayFireImpact(SurfaceType, TraceEndPoint);
-
-		//获得最后一次的开火时间
-		LastTimeFire = GetWorld()->TimeSeconds;
 	}
 }
 

@@ -72,7 +72,7 @@ void EmptyLinkFunctionForGeneratedCodeWeapon_Rifle() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AWeapon_Rifle, 3101922488);
+	IMPLEMENT_CLASS(AWeapon_Rifle, 2048798636);
 	template<> COUNTERSTRIKE_DEMO_API UClass* StaticClass<AWeapon_Rifle>()
 	{
 		return AWeapon_Rifle::StaticClass();
