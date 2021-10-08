@@ -42,6 +42,8 @@ protected:
 	//ªªµØ√…Ã´∆Ê
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Anim", meta = (AllowPrivateAccess = "true"))
 	UAnimMontage* ReloadMontage;
+	bool bReload;
+	FTimerHandle TH_Reload;
 
 	//À¿Õˆ±Íº«
 	UPROPERTY(BlueprintReadOnly, Category = "Player")
@@ -83,4 +85,7 @@ protected:
 	void WeaponReload();
 	void StartZoom();
 	void EndZoom();
+	void StartReload();
+	void SetIsReload();
+	void SetNoReload();
 };

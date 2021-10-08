@@ -5,6 +5,7 @@
 #include "TimerManager.h"
 #include "DrawDebugHelpers.h"
 #include "Kismet/GameplayStatics.h"
+#include "Spund/SoundBase.h"
 #include "Particles/ParticleSystemComponent.h"
 #include "PhysicalMaterials/PhysicalMaterial.h"
 #include "CounterStrike_DEMO/CounterStrike_DEMO.h"
@@ -34,6 +35,10 @@ void AWeaponBase::BeginPlay()
 
 void AWeaponBase::Fire()
 {
+	if (bReload)
+	{
+		return;
+	}
 	if (ActualMag > 0)
 	{
 		AActor* WeaponOwner = GetOwner();

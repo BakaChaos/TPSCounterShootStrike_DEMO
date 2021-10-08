@@ -124,6 +124,10 @@ void EmptyLinkFunctionForGeneratedCodeWeaponBase() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ActualAmmo_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_ActualAmmo;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TimeOfReload_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_TimeOfReload;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -238,6 +242,13 @@ void EmptyLinkFunctionForGeneratedCodeWeaponBase() {}
 	};
 #endif
 	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_ActualAmmo = { "ActualAmmo", nullptr, (EPropertyFlags)0x0010000000000014, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AWeaponBase, ActualAmmo), METADATA_PARAMS(Z_Construct_UClass_AWeaponBase_Statics::NewProp_ActualAmmo_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AWeaponBase_Statics::NewProp_ActualAmmo_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AWeaponBase_Statics::NewProp_TimeOfReload_MetaData[] = {
+		{ "Category", "Weapon" },
+		{ "ModuleRelativePath", "Public/WeaponBase.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AWeaponBase_Statics::NewProp_TimeOfReload = { "TimeOfReload", nullptr, (EPropertyFlags)0x0010000000000014, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AWeaponBase, TimeOfReload), METADATA_PARAMS(Z_Construct_UClass_AWeaponBase_Statics::NewProp_TimeOfReload_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AWeaponBase_Statics::NewProp_TimeOfReload_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AWeaponBase_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_WeaponMesh,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_MuzzleSocketName,
@@ -252,6 +263,7 @@ void EmptyLinkFunctionForGeneratedCodeWeaponBase() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_FleshImapctEffect,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_ActualMag,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_ActualAmmo,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AWeaponBase_Statics::NewProp_TimeOfReload,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AWeaponBase_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AWeaponBase>::IsAbstract,
@@ -280,7 +292,7 @@ void EmptyLinkFunctionForGeneratedCodeWeaponBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AWeaponBase, 1933641132);
+	IMPLEMENT_CLASS(AWeaponBase, 3940241035);
 	template<> COUNTERSTRIKE_DEMO_API UClass* StaticClass<AWeaponBase>()
 	{
 		return AWeaponBase::StaticClass();

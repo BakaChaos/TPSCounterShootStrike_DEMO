@@ -101,7 +101,7 @@ void APlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	PlayerInputComponent->BindAction("Zoom", IE_Pressed, this, &APlayerCharacter::StartZoom);
 	PlayerInputComponent->BindAction("Zoom",IE_Released, this, &APlayerCharacter::EndZoom);
 
-	PlayerInputComponent->BindAction("Reload", IE_Pressed, this, &APlayerCharacter::WeaponReload);
+	PlayerInputComponent->BindAction("Reload", IE_Pressed, this, &APlayerCharacter::StartReload);
 }
 
 FVector APlayerCharacter::GetPawnViewLocation() const
@@ -161,6 +161,33 @@ void APlayerCharacter::StartZoom()
 void APlayerCharacter::EndZoom()
 {
 	bWantsToZoom = false;
+}
+
+void APlayerCharacter::StartReload()
+{
+	if (CurrentWeapon->ActualMag == CurrentWeapon->DefaultMag || CurrentWeapon->ActualAmmo == 0)
+	{
+		return;
+	}
+	if (bReload)
+	{
+		return;
+	}
+	SetIsReload();
+	GetWorldTimerManager().SetTimer(TH_Reload, this, &APlayerCharacter::SetNoReload, CurrentWeapon->TimeOfReload, false);
+	WeaponReload();
+}
+
+void APlayerCharacter::SetIsReload()
+{
+	bReload = true;
+	CurrentWeapon->bReload = bReload;
+}
+
+void APlayerCharacter::SetNoReload()
+{
+	bReload = false;
+	CurrentWeapon->bReload = bReload;
 }
 
 void APlayerCharacter::WeaponReload()

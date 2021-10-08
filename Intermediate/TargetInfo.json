@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "CounterStrike_DEMO",
-			"Path": "E:\\GitProject\\CounterStrike_DEMO\\Source\\CounterStrike_DEMO.Target.cs",
+			"Path": "G:\\UEProject\\BakaChaos\\TPSCounterShootStrike_DEMO\\Source\\CounterStrike_DEMO.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "CounterStrike_DEMOEditor",
-			"Path": "E:\\GitProject\\CounterStrike_DEMO\\Source\\CounterStrike_DEMOEditor.Target.cs",
+			"Path": "G:\\UEProject\\BakaChaos\\TPSCounterShootStrike_DEMO\\Source\\CounterStrike_DEMOEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]

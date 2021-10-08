@@ -17,7 +17,7 @@ class AActor;
 #endif
 #define COUNTERSTRIKE_DEMO_HealthComponent_generated_h
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_9_DELEGATE \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_9_DELEGATE \
 struct _Script_CounterStrike_DEMO_eventOnHealthChangedSignature_Parms \
 { \
 	UHealthComponent* HealthComp; \
@@ -40,18 +40,18 @@ static inline void FOnHealthChangedSignature_DelegateWrapper(const FMulticastScr
 }
 
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_SPARSE_DATA
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_RPC_WRAPPERS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_SPARSE_DATA
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execHandleTakeAnyDamage);
 
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execHandleTakeAnyDamage);
 
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_INCLASS_NO_PURE_DECLS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUHealthComponent(); \
 	friend struct Z_Construct_UClass_UHealthComponent_Statics; \
@@ -60,7 +60,7 @@ public: \
 	DECLARE_SERIALIZER(UHealthComponent)
 
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_INCLASS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_INCLASS \
 private: \
 	static void StaticRegisterNativesUHealthComponent(); \
 	friend struct Z_Construct_UClass_UHealthComponent_Statics; \
@@ -69,7 +69,7 @@ public: \
 	DECLARE_SERIALIZER(UHealthComponent)
 
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_STANDARD_CONSTRUCTORS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UHealthComponent(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UHealthComponent) \
@@ -82,7 +82,7 @@ private: \
 public:
 
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_ENHANCED_CONSTRUCTORS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UHealthComponent(UHealthComponent&&); \
@@ -93,32 +93,32 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UHealthComponent); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UHealthComponent)
 
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_PRIVATE_PROPERTY_OFFSET \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__ActualHealth() { return STRUCT_OFFSET(UHealthComponent, ActualHealth); } \
 	FORCEINLINE static uint32 __PPO__DefaultHealth() { return STRUCT_OFFSET(UHealthComponent, DefaultHealth); }
 
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_11_PROLOG
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_GENERATED_BODY_LEGACY \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_11_PROLOG
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_PRIVATE_PROPERTY_OFFSET \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_SPARSE_DATA \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_RPC_WRAPPERS \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_INCLASS \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_STANDARD_CONSTRUCTORS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_PRIVATE_PROPERTY_OFFSET \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_SPARSE_DATA \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_RPC_WRAPPERS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_INCLASS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_GENERATED_BODY \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_PRIVATE_PROPERTY_OFFSET \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_SPARSE_DATA \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_INCLASS_NO_PURE_DECLS \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_ENHANCED_CONSTRUCTORS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_PRIVATE_PROPERTY_OFFSET \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_SPARSE_DATA \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_INCLASS_NO_PURE_DECLS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -126,7 +126,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> COUNTERSTRIKE_DEMO_API UClass* StaticClass<class UHealthComponent>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h
+#define CURRENT_FILE_ID TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

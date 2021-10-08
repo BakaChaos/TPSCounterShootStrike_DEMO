@@ -46,6 +46,8 @@ protected:
 	UParticleSystem* TracerEffect;
 	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
 	TSubclassOf<UCameraShakeBase> FireCameraShake;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
+	USoundBase* WeaponSound;
 	//击中物体的特效
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
 	UParticleSystem* DefaultImpactEffect;
@@ -63,6 +65,9 @@ public:
 	int ActualMag;
 	UPROPERTY(BlueprintReadOnly, Category = "Weapon")
 	int ActualAmmo;
+	UPROPERTY(BlueprintReadOnly, Category = "Weapon")
+	float TimeOfReload;
+	bool bReload;
 
 protected:
 	// Called when the game starts or when spawned

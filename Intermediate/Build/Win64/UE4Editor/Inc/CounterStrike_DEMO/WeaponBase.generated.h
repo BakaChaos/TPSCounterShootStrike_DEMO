@@ -13,18 +13,18 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define COUNTERSTRIKE_DEMO_WeaponBase_generated_h
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_SPARSE_DATA
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_RPC_WRAPPERS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_SPARSE_DATA
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execFire);
 
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execFire);
 
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_INCLASS_NO_PURE_DECLS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAWeaponBase(); \
 	friend struct Z_Construct_UClass_AWeaponBase_Statics; \
@@ -33,7 +33,7 @@ public: \
 	DECLARE_SERIALIZER(AWeaponBase)
 
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_INCLASS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_INCLASS \
 private: \
 	static void StaticRegisterNativesAWeaponBase(); \
 	friend struct Z_Construct_UClass_AWeaponBase_Statics; \
@@ -42,7 +42,7 @@ public: \
 	DECLARE_SERIALIZER(AWeaponBase)
 
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_STANDARD_CONSTRUCTORS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AWeaponBase(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AWeaponBase) \
@@ -55,7 +55,7 @@ private: \
 public:
 
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_ENHANCED_CONSTRUCTORS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AWeaponBase(AWeaponBase&&); \
@@ -66,7 +66,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AWeaponBase); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AWeaponBase)
 
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_PRIVATE_PROPERTY_OFFSET \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__WeaponMesh() { return STRUCT_OFFSET(AWeaponBase, WeaponMesh); } \
 	FORCEINLINE static uint32 __PPO__MuzzleSocketName() { return STRUCT_OFFSET(AWeaponBase, MuzzleSocketName); } \
 	FORCEINLINE static uint32 __PPO__DamageType() { return STRUCT_OFFSET(AWeaponBase, DamageType); } \
@@ -80,27 +80,27 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AWeaponBase); \
 	FORCEINLINE static uint32 __PPO__FleshImapctEffect() { return STRUCT_OFFSET(AWeaponBase, FleshImapctEffect); }
 
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_13_PROLOG
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_GENERATED_BODY_LEGACY \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_13_PROLOG
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_PRIVATE_PROPERTY_OFFSET \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_SPARSE_DATA \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_RPC_WRAPPERS \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_INCLASS \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_STANDARD_CONSTRUCTORS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_PRIVATE_PROPERTY_OFFSET \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_SPARSE_DATA \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_RPC_WRAPPERS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_INCLASS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_GENERATED_BODY \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_PRIVATE_PROPERTY_OFFSET \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_SPARSE_DATA \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_INCLASS_NO_PURE_DECLS \
-	CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_ENHANCED_CONSTRUCTORS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_PRIVATE_PROPERTY_OFFSET \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_SPARSE_DATA \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_INCLASS_NO_PURE_DECLS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -108,7 +108,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> COUNTERSTRIKE_DEMO_API UClass* StaticClass<class AWeaponBase>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID CounterStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h
+#define CURRENT_FILE_ID TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_WeaponBase_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

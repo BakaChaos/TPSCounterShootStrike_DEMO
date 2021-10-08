@@ -1,6 +1,6 @@
-E:\GitProject\CounterStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Development\CounterStrike_DEMO\Definitions.CounterStrike_DEMO.h
-E:\GitProject\CounterStrike_DEMO\Source\CounterStrike_DEMO\Public\WeaponBase.h
-E:\GitProject\CounterStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Inc\CounterStrike_DEMO\WeaponBase.generated.h
+G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Development\CounterStrike_DEMO\Definitions.CounterStrike_DEMO.h
+G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\WeaponBase.h
+G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Inc\CounterStrike_DEMO\WeaponBase.generated.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Public\DrawDebugHelpers.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\Kismet/GameplayStatics.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h
@@ -24,4 +24,4 @@ F:\epic\UE_4.26\Engine\Source\Runtime\PhysicsCore\Public\PhysicalMaterials/Physi
 F:\epic\UE_4.26\Engine\Source\Runtime\PhysicsCore\Public\PhysicsSettingsEnums.h
 F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\PhysicsCore\PhysicsSettingsEnums.generated.h
 F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\PhysicsCore\PhysicalMaterial.generated.h
-E:\GitProject\CounterStrike_DEMO\Source\CounterStrike_DEMO/CounterStrike_DEMO.h
+G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO/CounterStrike_DEMO.h

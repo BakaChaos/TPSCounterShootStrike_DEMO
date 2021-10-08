@@ -13,6 +13,8 @@ AWeapon_Rifle::AWeapon_Rifle()
 
 	DefaultAmmo = 180;
 	DefaultMag = 30;
+
+	TimeOfReload = 2.0f;
 }
 
 void AWeapon_Rifle::BeginPlay()

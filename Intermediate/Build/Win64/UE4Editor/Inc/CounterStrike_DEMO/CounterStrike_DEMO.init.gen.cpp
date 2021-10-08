@@ -25,7 +25,7 @@ void EmptyLinkFunctionForGeneratedCodeCounterStrike_DEMO_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0xCF85A167,
+				0xDD710ED3,
 				0xAAB08293,
 				METADATA_PARAMS(nullptr, 0)
 			};

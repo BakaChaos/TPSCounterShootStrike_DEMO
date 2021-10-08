@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\CounterStrike_DEMO.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{01AA988F-477B-4819-A1B3-A45A1DF2834B}</UniqueIdentifier>
+      <UniqueIdentifier>{ABAFDA5E-B464-4B4F-A974-CB7F1DCC516A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\CounterStrike_DEMO.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{7A1F59B1-2172-4B1C-B4AE-736E8A7130CF}</UniqueIdentifier>
+      <UniqueIdentifier>{DE1C14ED-BF7D-4B9A-B19B-16392C7006EA}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -29,7 +29,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\CounterStrike_DEMO">
-      <UniqueIdentifier>{3C933AF5-3665-4A60-AD68-95383E8AC8CE}</UniqueIdentifier>
+      <UniqueIdentifier>{01F3D591-E14F-4277-B8C7-EAE5D3C66A50}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\CounterStrike_DEMO\CounterStrike_DEMO.Build.cs">
       <Filter>Source\CounterStrike_DEMO</Filter>
@@ -47,7 +47,7 @@
       <Filter>Source\CounterStrike_DEMO</Filter>
     </ClInclude>
     <Filter Include="Source\CounterStrike_DEMO\Private">
-      <UniqueIdentifier>{99CC7122-5806-4911-B3BA-405D29F89C7F}</UniqueIdentifier>
+      <UniqueIdentifier>{EC53A2B0-767F-4389-9025-78410E14768C}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\HealthComponent.cpp">
       <Filter>Source\CounterStrike_DEMO\Private</Filter>
@@ -65,7 +65,7 @@
       <Filter>Source\CounterStrike_DEMO\Private</Filter>
     </ClCompile>
     <Filter Include="Source\CounterStrike_DEMO\Public">
-      <UniqueIdentifier>{9C121FE3-E5B5-4F11-9623-8F3738E2411F}</UniqueIdentifier>
+      <UniqueIdentifier>{AF984BA2-40DD-4224-9190-C767DBDB034E}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\HealthComponent.h">
       <Filter>Source\CounterStrike_DEMO\Public</Filter>
