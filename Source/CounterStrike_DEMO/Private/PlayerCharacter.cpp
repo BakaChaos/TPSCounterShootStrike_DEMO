@@ -194,17 +194,23 @@ void APlayerCharacter::WeaponReload()
 {
 	if (CurrentWeapon)
 	{
-		if (CurrentWeapon->ActualAmmo <= 0)
-		{
-			return;
-		}
 		if (ReloadMontage)
 		{
 			//int32 Count = ReloadMontage->CompositeSections.Num();
 			PlayAnimMontage(ReloadMontage, 1.f, "Default");
-	
-			CurrentWeapon->ActualAmmo = CurrentWeapon->ActualAmmo - CurrentWeapon->DefaultMag + CurrentWeapon->ActualMag;
-			CurrentWeapon->ActualMag = CurrentWeapon->DefaultMag;
+			
+			float TempAmmo;
+			TempAmmo = CurrentWeapon->ActualAmmo;
+			if (TempAmmo >= 30 || (CurrentWeapon->ActualMag + CurrentWeapon->ActualAmmo >= 30))
+			{
+				CurrentWeapon->ActualAmmo = CurrentWeapon->ActualAmmo - CurrentWeapon->DefaultMag + CurrentWeapon->ActualMag;
+				CurrentWeapon->ActualMag = CurrentWeapon->DefaultMag;
+			}
+			else
+			{
+				CurrentWeapon->ActualMag += CurrentWeapon->ActualAmmo;
+				CurrentWeapon->ActualAmmo = 0;
+			}
 		}
 	}
 }

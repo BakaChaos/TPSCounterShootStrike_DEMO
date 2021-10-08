@@ -5,7 +5,7 @@
 #include "TimerManager.h"
 #include "DrawDebugHelpers.h"
 #include "Kismet/GameplayStatics.h"
-#include "Spund/SoundBase.h"
+#include "Sound/SoundBase.h"
 #include "Particles/ParticleSystemComponent.h"
 #include "PhysicalMaterials/PhysicalMaterial.h"
 #include "CounterStrike_DEMO/CounterStrike_DEMO.h"
@@ -98,6 +98,7 @@ void AWeaponBase::PlayFireEffect(FVector TraceEndPoint)
 	if (MuzzleEffect)
 	{
 		UGameplayStatics::SpawnEmitterAttached(MuzzleEffect, WeaponMesh, MuzzleSocketName);
+		UGameplayStatics::SpawnSoundAttached(WeaponSound, WeaponMesh, MuzzleSocketName);
 	}
 	if (TracerEffect)
 	{

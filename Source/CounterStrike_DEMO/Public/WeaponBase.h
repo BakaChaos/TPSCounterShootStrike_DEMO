@@ -9,6 +9,7 @@
 class UParticleSystem;
 class USkeletalMeshComponent;
 class UDamageType;
+class USoundBase;
 
 UCLASS()
 class COUNTERSTRIKE_DEMO_API AWeaponBase : public AActor
