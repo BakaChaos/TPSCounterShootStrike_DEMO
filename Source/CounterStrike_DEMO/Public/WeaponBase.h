@@ -11,6 +11,19 @@ class USkeletalMeshComponent;
 class UDamageType;
 class USoundBase;
 
+USTRUCT()
+struct FHitScanTrace
+{
+	GENERATED_BODY()
+
+public:
+	//此处需要在.build.cs里包含"PhysicsCore"(物理表面在新版中已被设成模块)
+	UPROPERTY()
+	TEnumAsByte<EPhysicalSurface> SurfaceType;
+	UPROPERTY()
+	FVector_NetQuantize TraceTo;
+};
+
 UCLASS()
 class COUNTERSTRIKE_DEMO_API AWeaponBase : public AActor
 {
@@ -55,6 +68,9 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon")
 	UParticleSystem* FleshImapctEffect;
 
+	//网络复制武器特效
+	UPROPERTY(ReplicatedUsing = OnRep_HitScanTrace)
+	FHitScanTrace HitScanTrace;
 
 public:	
 	// Called every frame
@@ -79,4 +95,12 @@ protected:
 
 	void PlayFireImpact(EPhysicalSurface SurfaceType, FVector ImpactPoint);
 	void PlayFireEffect(FVector TraceEndPoint);
+
+	UFUNCTION(Server, Reliable, WithValidation)
+	void ServerFire();
+
+	UFUNCTION()
+	void OnRep_HitScanTrace();
+
+	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 };

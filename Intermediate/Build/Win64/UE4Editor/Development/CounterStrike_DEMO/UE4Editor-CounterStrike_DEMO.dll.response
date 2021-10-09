@@ -52,6 +52,7 @@
 "F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Development\Engine\UE4Editor-Engine.lib"
 "F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Development\Core\UE4Editor-Core.lib"
 "F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Development\CoreUObject\UE4Editor-CoreUObject.lib"
+"F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Development\PhysicsCore\UE4Editor-PhysicsCore.lib"
 "F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Development\InputCore\UE4Editor-InputCore.lib"
 "delayimp.lib"
 "wininet.lib"

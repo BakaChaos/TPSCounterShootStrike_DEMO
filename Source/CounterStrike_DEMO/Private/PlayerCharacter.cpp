@@ -9,6 +9,7 @@
 #include "Weapon_Rifle.h"
 #include "UObject/ConstructorHelpers.h"
 #include "HealthComponent.h"
+#include "Net/UnrealNetwork.h"
 #include "CounterStrike_DEMO/CounterStrike_DEMO.h"
 
 APlayerCharacter::APlayerCharacter()
@@ -49,13 +50,16 @@ void APlayerCharacter::BeginPlay()
 	DefaultFOV = PlayerCamera->FieldOfView;
 	HealthComp->OnHealthChanged.AddDynamic(this, &APlayerCharacter::OnHealthChanged);
 	
-	FActorSpawnParameters SpawnParam;
-	SpawnParam.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-	CurrentWeapon = GetWorld()->SpawnActor<AWeapon_Rifle>(FirstWeaponClass, FVector(0, 0, -160.0f), FRotator::ZeroRotator, SpawnParam);
-	if (CurrentWeapon)
+	if (GetLocalRole() == ROLE_Authority)
 	{
-		CurrentWeapon->SetOwner(this);
-		CurrentWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, WeaponAttachSocketName);
+		FActorSpawnParameters SpawnParam;
+		SpawnParam.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+		CurrentWeapon = GetWorld()->SpawnActor<AWeapon_Rifle>(FirstWeaponClass, FVector(0, 0, -160.0f), FRotator::ZeroRotator, SpawnParam);
+		if (CurrentWeapon)
+		{
+			CurrentWeapon->SetOwner(this);
+			CurrentWeapon->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, WeaponAttachSocketName);
+		}
 	}
 }
 
@@ -71,6 +75,7 @@ void APlayerCharacter::OnHealthChanged(UHealthComponent* OwningHealthComp, float
 		SetLifeSpan(10.f);
 	}
 }
+
 
 // Called every frame
 void APlayerCharacter::Tick(float DeltaTime)
@@ -215,3 +220,10 @@ void APlayerCharacter::WeaponReload()
 	}
 }
 
+void APlayerCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(APlayerCharacter, CurrentWeapon);
+	DOREPLIFETIME(APlayerCharacter, bDied);
+}

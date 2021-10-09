@@ -6,6 +6,7 @@
 #include "DrawDebugHelpers.h"
 #include "Kismet/GameplayStatics.h"
 #include "Sound/SoundBase.h"
+#include "Net/UnrealNetwork.h"
 #include "Particles/ParticleSystemComponent.h"
 #include "PhysicalMaterials/PhysicalMaterial.h"
 #include "CounterStrike_DEMO/CounterStrike_DEMO.h"
@@ -24,6 +25,11 @@ AWeaponBase::AWeaponBase()
 
 	MuzzleSocketName = "MuzzleSocket";
 	TracerTargetName = "Target";
+
+	SetReplicates(true);
+	//设置网络更新频率
+	NetUpdateFrequency = 66.f;
+	MinNetUpdateFrequency = 33.f;
 }
 
 // Called when the game starts or when spawned
@@ -38,6 +44,11 @@ void AWeaponBase::Fire()
 	if (bReload)
 	{
 		return;
+	}
+	if (GetLocalRole() < ROLE_Authority)
+	{
+		//此处判断是否客户端在调用，如果是客户端在调用则给服务器发送开火信息，让服务器判定是否开火
+		ServerFire();
 	}
 	if (ActualMag > 0)
 	{
@@ -83,6 +94,13 @@ void AWeaponBase::Fire()
 			}
 			PlayFireEffect(TraceEndPoint);
 			PlayFireImpact(SurfaceType, TraceEndPoint);
+
+			//将射击的信息发送给其他的客户端(由服务器发出)
+			if (GetLocalRole() == ROLE_Authority)
+			{
+				HitScanTrace.SurfaceType = SurfaceType;
+				HitScanTrace.TraceTo = TraceEndPoint;
+			}
 
 			ActualMag--;
 	
@@ -148,6 +166,24 @@ void AWeaponBase::PlayFireImpact(EPhysicalSurface SurfaceType, FVector ImpactPoi
 	}
 }
 
+void AWeaponBase::OnRep_HitScanTrace()
+{
+	//Play cosmptic FX
+	PlayFireEffect(HitScanTrace.TraceTo);
+	PlayFireImpact(HitScanTrace.SurfaceType, HitScanTrace.TraceTo);
+}
+
+//只会在主机上处理的函数
+void AWeaponBase::ServerFire_Implementation()
+{
+	Fire();
+}
+
+bool AWeaponBase::ServerFire_Validate()
+{
+	return true;
+}
+
 // Called every frame
 void AWeaponBase::Tick(float DeltaTime)
 {
@@ -155,3 +191,10 @@ void AWeaponBase::Tick(float DeltaTime)
 
 }
 
+void AWeaponBase::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	//略过所有者，不会播放两次效果
+	DOREPLIFETIME_CONDITION(AWeaponBase, HitScanTrace, COND_SkipOwner);
+}

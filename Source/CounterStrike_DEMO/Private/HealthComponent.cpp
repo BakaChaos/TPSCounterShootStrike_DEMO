@@ -2,6 +2,7 @@
 
 
 #include "HealthComponent.h"
+#include "Net/UnrealNetwork.h"
 
 // Sets default values for this component's properties
 UHealthComponent::UHealthComponent()
@@ -11,6 +12,7 @@ UHealthComponent::UHealthComponent()
 	PrimaryComponentTick.bCanEverTick = true;
 
 	DefaultHealth = 100.f;
+	SetIsReplicatedByDefault(true);
 }
 
 
@@ -20,11 +22,14 @@ void UHealthComponent::BeginPlay()
 	Super::BeginPlay();
 	
 	AActor* HealthOwner = GetOwner();
-	if (HealthOwner)
+	if (GetOwnerRole() == ROLE_Authority)
 	{
-		HealthOwner->OnTakeAnyDamage.AddDynamic(this, &UHealthComponent::HandleTakeAnyDamage);
+		if (HealthOwner)
+		{
+			HealthOwner->OnTakeAnyDamage.AddDynamic(this, &UHealthComponent::HandleTakeAnyDamage);
+		}
+		ActualHealth = DefaultHealth;
 	}
-	ActualHealth = DefaultHealth;
 }
 
 
@@ -41,6 +46,12 @@ void UHealthComponent::HandleTakeAnyDamage(AActor* DamageActor, float Damage, co
 	UE_LOG(LogTemp, Log, TEXT("HealthChanged : %s"), *FString::SanitizeFloat(ActualHealth));
 
 	OnHealthChanged.Broadcast(this, ActualHealth, Damage, DamageType, InstigatedBy, DamageCauser);
+}
+
+void UHealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+	DOREPLIFETIME(UHealthComponent, ActualHealth);
 }
 
 // Called every frame

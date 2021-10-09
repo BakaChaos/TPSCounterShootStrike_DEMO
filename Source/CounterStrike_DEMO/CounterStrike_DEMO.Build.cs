@@ -8,7 +8,7 @@ public class CounterStrike_DEMO : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "PhySicsCore", "InputCore" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 

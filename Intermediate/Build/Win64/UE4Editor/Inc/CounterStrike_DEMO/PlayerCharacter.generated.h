@@ -34,7 +34,14 @@ private: \
 	friend struct Z_Construct_UClass_APlayerCharacter_Statics; \
 public: \
 	DECLARE_CLASS(APlayerCharacter, ACharacter, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/CounterStrike_DEMO"), NO_API) \
-	DECLARE_SERIALIZER(APlayerCharacter)
+	DECLARE_SERIALIZER(APlayerCharacter) \
+	enum class ENetFields_Private : uint16 \
+	{ \
+		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
+		CurrentWeapon=NETFIELD_REP_START, \
+		bDied, \
+		NETFIELD_REP_END=bDied	}; \
+	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_18_INCLASS \
@@ -43,7 +50,14 @@ private: \
 	friend struct Z_Construct_UClass_APlayerCharacter_Statics; \
 public: \
 	DECLARE_CLASS(APlayerCharacter, ACharacter, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/CounterStrike_DEMO"), NO_API) \
-	DECLARE_SERIALIZER(APlayerCharacter)
+	DECLARE_SERIALIZER(APlayerCharacter) \
+	enum class ENetFields_Private : uint16 \
+	{ \
+		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
+		CurrentWeapon=NETFIELD_REP_START, \
+		bDied, \
+		NETFIELD_REP_END=bDied	}; \
+	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_18_STANDARD_CONSTRUCTORS \

@@ -57,7 +57,13 @@ private: \
 	friend struct Z_Construct_UClass_UHealthComponent_Statics; \
 public: \
 	DECLARE_CLASS(UHealthComponent, UActorComponent, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/CounterStrike_DEMO"), NO_API) \
-	DECLARE_SERIALIZER(UHealthComponent)
+	DECLARE_SERIALIZER(UHealthComponent) \
+	enum class ENetFields_Private : uint16 \
+	{ \
+		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
+		ActualHealth=NETFIELD_REP_START, \
+		NETFIELD_REP_END=ActualHealth	}; \
+	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_INCLASS \
@@ -66,7 +72,13 @@ private: \
 	friend struct Z_Construct_UClass_UHealthComponent_Statics; \
 public: \
 	DECLARE_CLASS(UHealthComponent, UActorComponent, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/CounterStrike_DEMO"), NO_API) \
-	DECLARE_SERIALIZER(UHealthComponent)
+	DECLARE_SERIALIZER(UHealthComponent) \
+	enum class ENetFields_Private : uint16 \
+	{ \
+		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
+		ActualHealth=NETFIELD_REP_START, \
+		NETFIELD_REP_END=ActualHealth	}; \
+	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_STANDARD_CONSTRUCTORS \

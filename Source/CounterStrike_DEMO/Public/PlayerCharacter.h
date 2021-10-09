@@ -34,7 +34,7 @@ protected:
 	//EditDefaultsOnly表示可以在右侧修改值，BlueprintReadOnly表示蓝图中可以调用该值但不能修改(Write表示可修改此值)
 	UPROPERTY(EditDefaultsOnly, Category = "Player")
 	TSubclassOf<AWeapon_Rifle> FirstWeaponClass;
-	UPROPERTY(BlueprintReadOnly, Category = "Player")
+	UPROPERTY(Replicated, BlueprintReadOnly, Category = "Player")
 	AWeapon_Rifle* CurrentWeapon;
 	UPROPERTY(VisibleDefaultsOnly, Category = "Player")
 	FName WeaponAttachSocketName;
@@ -46,7 +46,7 @@ protected:
 	FTimerHandle TH_Reload;
 
 	//死亡标记
-	UPROPERTY(BlueprintReadOnly, Category = "Player")
+	UPROPERTY(Replicated, BlueprintReadOnly, Category = "Player")
 	bool bDied;
 
 	//瞄准逻辑
@@ -72,6 +72,8 @@ protected:
 
 	UFUNCTION()
 	void OnHealthChanged(UHealthComponent* OwningHealthComp, float Health, float HealthDelta, const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser);
+
+	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
 
 	//创建角色移动函数(四周移动和跳跃和下蹲)
 	void MoveForward(float value);
