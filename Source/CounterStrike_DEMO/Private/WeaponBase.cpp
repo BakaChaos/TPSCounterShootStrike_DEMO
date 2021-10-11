@@ -7,6 +7,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "Sound/SoundBase.h"
 #include "Net/UnrealNetwork.h"
+#include "Components/TimelineComponent.h"
 #include "Particles/ParticleSystemComponent.h"
 #include "PhysicalMaterials/PhysicalMaterial.h"
 #include "CounterStrike_DEMO/CounterStrike_DEMO.h"
@@ -165,6 +166,12 @@ void AWeaponBase::PlayFireImpact(EPhysicalSurface SurfaceType, FVector ImpactPoi
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), SurfaceSelect, ImpactPoint, ShootDirection.Rotation());
 	}
 }
+
+// void AWeaponBase::PlayRecoil(float Recoil)
+// {
+// 	float Current_Recoil = Recoil;
+// 	TL_Recoil.Play();
+// }
 
 void AWeaponBase::OnRep_HitScanTrace()
 {

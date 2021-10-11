@@ -28,6 +28,7 @@ public:
 	UHealthComponent();
 	// Called every frame
 	//virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	float GetHealth();
 
 protected:
 	// Called when the game starts

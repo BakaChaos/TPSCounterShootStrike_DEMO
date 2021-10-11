@@ -32,6 +32,21 @@ class COUNTERSTRIKE_DEMO_API AWeaponBase : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AWeaponBase();
+	//子弹系统
+	int DefaultAmmo;
+	int DefaultMag;
+	UPROPERTY(BlueprintReadOnly, Category = "Weapon")
+	int ActualMag;
+	UPROPERTY(BlueprintReadOnly, Category = "Weapon")
+	int ActualAmmo;
+	//换弹值(暴露给所持有的character)
+	UPROPERTY(BlueprintReadOnly, Category = "Weapon")
+	float TimeOfReload;
+	bool bReload;
+
+	//后坐力
+	UPROPERTY(BlueprintReadOnly, Category = "Weapon")
+	float Recoil;
 
 protected:
 	//武器基本属性
@@ -72,19 +87,13 @@ protected:
 	UPROPERTY(ReplicatedUsing = OnRep_HitScanTrace)
 	FHitScanTrace HitScanTrace;
 
+// 	FTimeline TL_Recoil;
+// 	FTimeline TL_ReturnRecoil;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	int DefaultAmmo;
-	int DefaultMag;
-	UPROPERTY(BlueprintReadOnly, Category = "Weapon")
-	int ActualMag;
-	UPROPERTY(BlueprintReadOnly, Category = "Weapon")
-	int ActualAmmo;
-	UPROPERTY(BlueprintReadOnly, Category = "Weapon")
-	float TimeOfReload;
-	bool bReload;
 
 protected:
 	// Called when the game starts or when spawned
@@ -95,6 +104,7 @@ protected:
 
 	void PlayFireImpact(EPhysicalSurface SurfaceType, FVector ImpactPoint);
 	void PlayFireEffect(FVector TraceEndPoint);
+/*	void PlayRecoil(float Recoil);*/
 
 	UFUNCTION(Server, Reliable, WithValidation)
 	void ServerFire();

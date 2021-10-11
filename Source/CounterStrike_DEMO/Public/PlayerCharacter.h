@@ -42,6 +42,7 @@ protected:
 	//»»µ¯ÃÉÌ«Ææ
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Anim", meta = (AllowPrivateAccess = "true"))
 	UAnimMontage* ReloadMontage;
+	UPROPERTY(Replicated, BlueprintReadOnly)
 	bool bReload;
 	FTimerHandle TH_Reload;
 

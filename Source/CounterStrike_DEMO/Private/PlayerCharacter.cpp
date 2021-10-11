@@ -226,4 +226,5 @@ void APlayerCharacter::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Out
 
 	DOREPLIFETIME(APlayerCharacter, CurrentWeapon);
 	DOREPLIFETIME(APlayerCharacter, bDied);
+	DOREPLIFETIME(APlayerCharacter, bReload);
 }

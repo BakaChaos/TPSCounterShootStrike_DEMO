@@ -15,6 +15,10 @@ UHealthComponent::UHealthComponent()
 	SetIsReplicatedByDefault(true);
 }
 
+float UHealthComponent::GetHealth()
+{
+	return ActualHealth;
+}
 
 // Called when the game starts
 void UHealthComponent::BeginPlay()

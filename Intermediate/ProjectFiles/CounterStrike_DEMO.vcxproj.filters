@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\CounterStrike_DEMO.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{ABAFDA5E-B464-4B4F-A974-CB7F1DCC516A}</UniqueIdentifier>
+      <UniqueIdentifier>{F39BD287-B193-4D37-92DB-114EFAF9D447}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\CounterStrike_DEMO.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{DE1C14ED-BF7D-4B9A-B19B-16392C7006EA}</UniqueIdentifier>
+      <UniqueIdentifier>{93DC801F-FEAE-45CF-A956-28EBD9CB5368}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -29,7 +29,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\CounterStrike_DEMO">
-      <UniqueIdentifier>{01F3D591-E14F-4277-B8C7-EAE5D3C66A50}</UniqueIdentifier>
+      <UniqueIdentifier>{7BAF7959-17BE-45B9-88F6-746B60B7EDDD}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\CounterStrike_DEMO\CounterStrike_DEMO.Build.cs">
       <Filter>Source\CounterStrike_DEMO</Filter>
@@ -40,19 +40,19 @@
     <ClInclude Include="..\..\Source\CounterStrike_DEMO\CounterStrike_DEMO.h">
       <Filter>Source\CounterStrike_DEMO</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\CounterStrike_DEMO\CounterStrike_DEMOGameModeBase.cpp">
-      <Filter>Source\CounterStrike_DEMO</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\CounterStrike_DEMO\CounterStrike_DEMOGameModeBase.h">
-      <Filter>Source\CounterStrike_DEMO</Filter>
-    </ClInclude>
     <Filter Include="Source\CounterStrike_DEMO\Private">
-      <UniqueIdentifier>{EC53A2B0-767F-4389-9025-78410E14768C}</UniqueIdentifier>
+      <UniqueIdentifier>{657CE7D2-8FE3-43DB-9102-5807228CB9A6}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\HealthComponent.cpp">
       <Filter>Source\CounterStrike_DEMO\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\PlayerCharacter.cpp">
+      <Filter>Source\CounterStrike_DEMO\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\SGameMode.cpp">
+      <Filter>Source\CounterStrike_DEMO\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\SGameState.cpp">
       <Filter>Source\CounterStrike_DEMO\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\WeaponBase.cpp">
@@ -64,13 +64,25 @@
     <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\Weapon_Rifle.cpp">
       <Filter>Source\CounterStrike_DEMO\Private</Filter>
     </ClCompile>
+    <Filter Include="Source\CounterStrike_DEMO\Private\AI">
+      <UniqueIdentifier>{DA33DAFC-6E07-46D8-A2A7-FEEBB6611E18}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\AI\STrackBot.cpp">
+      <Filter>Source\CounterStrike_DEMO\Private\AI</Filter>
+    </ClCompile>
     <Filter Include="Source\CounterStrike_DEMO\Public">
-      <UniqueIdentifier>{AF984BA2-40DD-4224-9190-C767DBDB034E}</UniqueIdentifier>
+      <UniqueIdentifier>{C06BC233-97A2-447C-AB0D-3088862FC6AD}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\HealthComponent.h">
       <Filter>Source\CounterStrike_DEMO\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\PlayerCharacter.h">
+      <Filter>Source\CounterStrike_DEMO\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\SGameMode.h">
+      <Filter>Source\CounterStrike_DEMO\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\SGameState.h">
       <Filter>Source\CounterStrike_DEMO\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\WeaponBase.h">
@@ -81,6 +93,12 @@
     </ClInclude>
     <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\Weapon_Rifle.h">
       <Filter>Source\CounterStrike_DEMO\Public</Filter>
+    </ClInclude>
+    <Filter Include="Source\CounterStrike_DEMO\Public\AI">
+      <UniqueIdentifier>{781AED6A-229F-4ACB-8D61-E0022E0CD06E}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\AI\STrackBot.h">
+      <Filter>Source\CounterStrike_DEMO\Public\AI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

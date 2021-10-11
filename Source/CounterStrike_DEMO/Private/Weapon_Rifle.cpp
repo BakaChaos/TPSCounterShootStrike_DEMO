@@ -15,6 +15,8 @@ AWeapon_Rifle::AWeapon_Rifle()
 	DefaultMag = 30;
 
 	TimeOfReload = 2.0f;
+
+	Recoil = 15.f;
 }
 
 void AWeapon_Rifle::BeginPlay()
