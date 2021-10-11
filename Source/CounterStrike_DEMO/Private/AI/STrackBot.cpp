@@ -5,9 +5,11 @@
 #include "PlayerCharacter.h"
 #include "NavigationPath.h" 
 #include "NavigationSystem.h"
+#include "HealthComponent.h"
 #include "GameFramework/Character.h"
 #include "Kismet/GameplayStatics.h"
 #include "Components/StaticMeshComponent.h"
+#include "Particles/ParticleSystemComponent.h"
 
 // Sets default values
 ASTrackBot::ASTrackBot()
@@ -17,6 +19,8 @@ ASTrackBot::ASTrackBot()
 
 	BotMeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComp"));
 	RootComponent = BotMeshComp;
+	HealthComp = CreateDefaultSubobject<UHealthComponent>(TEXT("HealComp"));
+	HealthComp->OnHealthChanged.AddDynamic(this, &ASTrackBot::HandleTakeAnyDamage);
 
 	BotMeshComp->SetSimulatePhysics(true);
 	//使mesh不能够影响导航
@@ -24,7 +28,9 @@ ASTrackBot::ASTrackBot()
 
 	bUseVelocityChange = true;
 	RequiredDistanceToTarget = 100.f;
-	MoventForce = 1000;
+	MovementForce = 1000;
+	Damage = 40.f;
+	DamageRadius = 200.f;
 }
 
 // Called when the game starts or when spawned
@@ -51,6 +57,46 @@ FVector ASTrackBot::GetNextPathPoint()
 	return GetActorLocation();
 }
 
+void ASTrackBot::HandleTakeAnyDamage(UHealthComponent* OwningHealthComp, 
+	float Health, float HealthDelta, const class UDamageType* DamageType,
+	class AController* InstigatedBy, AActor* DamageCauser)
+{
+	//创建死亡后爆炸和被击中后产生特效
+	if (MatInst == nullptr)
+	{
+		MatInst = BotMeshComp->CreateAndSetMaterialInstanceDynamicFromMaterial(0, BotMeshComp->GetMaterial(0));
+	}
+	//与材质中的节点绑定LastTimeDamage
+	if (MatInst)
+	{
+		MatInst->SetScalarParameterValue("LastTimeDamage", GetWorld()->TimeSeconds);
+	}
+
+	UE_LOG(LogTemp, Log, TEXT("Health %s of %s"), *FString::SanitizeFloat(Health), *GetName());
+
+	if (Health <= 0.f)
+	{
+		SelfDestruct();
+	}
+}
+
+void ASTrackBot::SelfDestruct()
+{
+	if (bExploded)
+	{
+		return;
+	}
+	bExploded = true;
+	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ExplosionEffect, GetActorLocation());
+
+	//加入忽略的对象(自身)
+	TArray<AActor*> IgnoredActors;
+	IgnoredActors.Add(this);
+
+	UGameplayStatics::ApplyRadialDamage(this, Damage, GetActorLocation(), DamageRadius, nullptr, IgnoredActors, this, GetInstigatorController(), true);
+	Destroy();
+}
+
 // Called every frame
 void ASTrackBot::Tick(float DeltaTime)
 {
@@ -67,7 +113,7 @@ void ASTrackBot::Tick(float DeltaTime)
 	{
 		FVector ForceDirection = NextPathPoint - GetActorLocation();
 		ForceDirection.Normalize();
-		ForceDirection *= MoventForce;
+		ForceDirection *= MovementForce;
 
 		BotMeshComp->AddForce(ForceDirection, NAME_None, bUseVelocityChange);
 	}

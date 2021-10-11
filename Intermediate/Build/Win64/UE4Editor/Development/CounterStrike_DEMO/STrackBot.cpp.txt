@@ -52,6 +52,8 @@ F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UnrealEd\EditorEng
 f:\epic\ue_4.26\engine\source\editor\unrealed\public\Subsystems/ImportSubsystem.h
 F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UnrealEd\ImportSubsystem.generated.h
 F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\NavigationSystem\NavigationSystem.generated.h
+G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\HealthComponent.h
+G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Inc\CounterStrike_DEMO\HealthComponent.generated.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\Kismet/GameplayStatics.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h
 F:\epic\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h
@@ -63,3 +65,10 @@ F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DialogueTyp
 f:\epic\ue_4.26\engine\source\runtime\engine\classes\kismet\GameplayStaticsTypes.h
 F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStaticsTypes.generated.h
 F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameplayStatics.generated.h
+F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\Particles/ParticleSystemComponent.h
+F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\Particles/ParticleSystem.h
+F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\Particles/ParticlePerfStats.h
+F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ParticleSystem.generated.h
+F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\Particles/Emitter.h
+F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Emitter.generated.h
+F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ParticleSystemComponent.generated.h
