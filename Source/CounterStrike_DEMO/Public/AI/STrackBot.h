@@ -6,6 +6,7 @@
 #include "GameFramework/Pawn.h"
 #include "STrackBot.generated.h"
 
+class USoundCue;
 class UHealthComponent;
 class USphereComponent;
 
@@ -31,10 +32,14 @@ protected:
 	UPROPERTY(EditDefaultsOnly, Category = "TrackBot")
 	float RequiredDistanceToTarget;
 
-	//受到伤害进行闪烁的材质和爆炸效果
+	//受到伤害进行闪烁的材质和爆炸效果(声音效果)
 	UMaterialInstanceDynamic* MatInst;
 	UPROPERTY(EditDefaultsOnly, Category = "TrackBot")
 	UParticleSystem* ExplosionEffect;
+	UPROPERTY(EditDefaultsOnly, Category = "TrackBot")
+	USoundCue* SelfDestructSound;
+	UPROPERTY(EditDefaultsOnly, Category = "TrackBot")
+	USoundCue* ExplodeEffect;
 
 	//伤害大小和伤害半径
 	UPROPERTY(EditDefaultsOnly, Category = "TrackBot")
@@ -46,6 +51,8 @@ protected:
 	//自毁程序
 	FTimerHandle TH_SelfDamage;
 	bool bStartSelfDestruction;//确保自毁程序只会启动一次
+	UPROPERTY(EditDefaultsOnly, Category = "TrackBot")
+	float SelfDamageInteval;
 
 public:
 

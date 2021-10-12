@@ -17,18 +17,18 @@ class AActor;
 #endif
 #define COUNTERSTRIKE_DEMO_STrackBot_generated_h
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_SPARSE_DATA
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_RPC_WRAPPERS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_SPARSE_DATA
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execHandleTakeAnyDamage);
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execHandleTakeAnyDamage);
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_INCLASS_NO_PURE_DECLS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesASTrackBot(); \
 	friend struct Z_Construct_UClass_ASTrackBot_Statics; \
@@ -37,7 +37,7 @@ public: \
 	DECLARE_SERIALIZER(ASTrackBot)
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_INCLASS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_INCLASS \
 private: \
 	static void StaticRegisterNativesASTrackBot(); \
 	friend struct Z_Construct_UClass_ASTrackBot_Statics; \
@@ -46,7 +46,7 @@ public: \
 	DECLARE_SERIALIZER(ASTrackBot)
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_STANDARD_CONSTRUCTORS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ASTrackBot(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ASTrackBot) \
@@ -59,7 +59,7 @@ private: \
 public:
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_ENHANCED_CONSTRUCTORS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ASTrackBot(ASTrackBot&&); \
@@ -70,7 +70,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ASTrackBot); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ASTrackBot)
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_PRIVATE_PROPERTY_OFFSET \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__BotMeshComp() { return STRUCT_OFFSET(ASTrackBot, BotMeshComp); } \
 	FORCEINLINE static uint32 __PPO__SphereComp() { return STRUCT_OFFSET(ASTrackBot, SphereComp); } \
 	FORCEINLINE static uint32 __PPO__HealthComp() { return STRUCT_OFFSET(ASTrackBot, HealthComp); } \
@@ -78,31 +78,34 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ASTrackBot); \
 	FORCEINLINE static uint32 __PPO__bUseVelocityChange() { return STRUCT_OFFSET(ASTrackBot, bUseVelocityChange); } \
 	FORCEINLINE static uint32 __PPO__RequiredDistanceToTarget() { return STRUCT_OFFSET(ASTrackBot, RequiredDistanceToTarget); } \
 	FORCEINLINE static uint32 __PPO__ExplosionEffect() { return STRUCT_OFFSET(ASTrackBot, ExplosionEffect); } \
+	FORCEINLINE static uint32 __PPO__SelfDestructSound() { return STRUCT_OFFSET(ASTrackBot, SelfDestructSound); } \
+	FORCEINLINE static uint32 __PPO__ExplodeEffect() { return STRUCT_OFFSET(ASTrackBot, ExplodeEffect); } \
 	FORCEINLINE static uint32 __PPO__Damage() { return STRUCT_OFFSET(ASTrackBot, Damage); } \
-	FORCEINLINE static uint32 __PPO__DamageRadius() { return STRUCT_OFFSET(ASTrackBot, DamageRadius); }
+	FORCEINLINE static uint32 __PPO__DamageRadius() { return STRUCT_OFFSET(ASTrackBot, DamageRadius); } \
+	FORCEINLINE static uint32 __PPO__SelfDamageInteval() { return STRUCT_OFFSET(ASTrackBot, SelfDamageInteval); }
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_12_PROLOG
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_GENERATED_BODY_LEGACY \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_13_PROLOG
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_PRIVATE_PROPERTY_OFFSET \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_SPARSE_DATA \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_RPC_WRAPPERS \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_INCLASS \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_STANDARD_CONSTRUCTORS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_PRIVATE_PROPERTY_OFFSET \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_SPARSE_DATA \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_RPC_WRAPPERS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_INCLASS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_GENERATED_BODY \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_PRIVATE_PROPERTY_OFFSET \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_SPARSE_DATA \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_INCLASS_NO_PURE_DECLS \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_15_ENHANCED_CONSTRUCTORS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_PRIVATE_PROPERTY_OFFSET \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_SPARSE_DATA \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_INCLASS_NO_PURE_DECLS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_AI_STrackBot_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -54,6 +54,10 @@ F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\UnrealEd\ImportSub
 F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\NavigationSystem\NavigationSystem.generated.h
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\HealthComponent.h
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Inc\CounterStrike_DEMO\HealthComponent.generated.h
+F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\Sound/SoundCue.h
+F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\Sound/SoundNode.h
+F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SoundNode.generated.h
+F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SoundCue.generated.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\Kismet/GameplayStatics.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\Kismet/KismetSystemLibrary.h
 F:\epic\UE_4.26\Engine\Source\Runtime\CoreUObject\Public\UObject/PropertyAccessUtil.h

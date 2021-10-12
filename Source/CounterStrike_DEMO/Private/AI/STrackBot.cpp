@@ -6,6 +6,7 @@
 #include "NavigationPath.h" 
 #include "NavigationSystem.h"
 #include "HealthComponent.h"
+#include "Sound/SoundCue.h"
 #include "GameFramework/Character.h"
 #include "Kismet/GameplayStatics.h"
 #include "Components/SphereComponent.h"
@@ -21,8 +22,9 @@ ASTrackBot::ASTrackBot()
 	bUseVelocityChange = true;
 	RequiredDistanceToTarget = 100.f;
 	MovementForce = 1000;
-	Damage = 40.f;
 	DamageRadius = 200.f;
+	SelfDamageInteval = 0.25f;
+	Damage = 40.f;
 
 	BotMeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComp"));
 	RootComponent = BotMeshComp;
@@ -101,6 +103,7 @@ void ASTrackBot::SelfDestruct()
 	IgnoredActors.Add(this);
 
 	UGameplayStatics::ApplyRadialDamage(this, Damage, GetActorLocation(), DamageRadius, nullptr, IgnoredActors, this, GetInstigatorController(), true);
+	UGameplayStatics::PlaySoundAtLocation(this, ExplodeEffect, GetActorLocation());
 	Destroy();
 }
 
@@ -141,8 +144,10 @@ void ASTrackBot::NotifyActorBeginOverlap(AActor* OtherActor)
 		if (PlayerPawn)
 		{
 			//发生重叠后如果为玩家则进行爆炸
-			GetWorldTimerManager().SetTimer(TH_SelfDamage, this, &ASTrackBot::DamageSelf, 0.5f, true, 0.f);
+			GetWorldTimerManager().SetTimer(TH_SelfDamage, this, &ASTrackBot::DamageSelf, SelfDamageInteval, true, 0.f);
 			bStartSelfDestruction = true;
+
+			UGameplayStatics::SpawnSoundAttached(SelfDestructSound, RootComponent);
 		}
 	}
 }

@@ -24,6 +24,7 @@ void EmptyLinkFunctionForGeneratedCodeSTrackBot() {}
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UParticleSystem_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_USoundCue_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(ASTrackBot::execHandleTakeAnyDamage)
 	{
@@ -155,6 +156,14 @@ void EmptyLinkFunctionForGeneratedCodeSTrackBot() {}
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ExplosionEffect;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SelfDestructSound_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_SelfDestructSound;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ExplodeEffect_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ExplodeEffect;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Damage_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Damage;
@@ -162,6 +171,10 @@ void EmptyLinkFunctionForGeneratedCodeSTrackBot() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_DamageRadius_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_DamageRadius;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SelfDamageInteval_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_SelfDamageInteval;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -239,6 +252,20 @@ void EmptyLinkFunctionForGeneratedCodeSTrackBot() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASTrackBot_Statics::NewProp_ExplosionEffect = { "ExplosionEffect", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASTrackBot, ExplosionEffect), Z_Construct_UClass_UParticleSystem_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASTrackBot_Statics::NewProp_ExplosionEffect_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASTrackBot_Statics::NewProp_ExplosionEffect_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTrackBot_Statics::NewProp_SelfDestructSound_MetaData[] = {
+		{ "Category", "TrackBot" },
+		{ "ModuleRelativePath", "Public/AI/STrackBot.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASTrackBot_Statics::NewProp_SelfDestructSound = { "SelfDestructSound", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASTrackBot, SelfDestructSound), Z_Construct_UClass_USoundCue_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASTrackBot_Statics::NewProp_SelfDestructSound_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASTrackBot_Statics::NewProp_SelfDestructSound_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTrackBot_Statics::NewProp_ExplodeEffect_MetaData[] = {
+		{ "Category", "TrackBot" },
+		{ "ModuleRelativePath", "Public/AI/STrackBot.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASTrackBot_Statics::NewProp_ExplodeEffect = { "ExplodeEffect", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASTrackBot, ExplodeEffect), Z_Construct_UClass_USoundCue_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASTrackBot_Statics::NewProp_ExplodeEffect_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASTrackBot_Statics::NewProp_ExplodeEffect_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTrackBot_Statics::NewProp_Damage_MetaData[] = {
 		{ "Category", "TrackBot" },
 		{ "Comment", "//?\xcb\xba???\xd0\xa1???\xcb\xba??\xeb\xbe\xb6\n" },
@@ -254,6 +281,15 @@ void EmptyLinkFunctionForGeneratedCodeSTrackBot() {}
 	};
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASTrackBot_Statics::NewProp_DamageRadius = { "DamageRadius", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASTrackBot, DamageRadius), METADATA_PARAMS(Z_Construct_UClass_ASTrackBot_Statics::NewProp_DamageRadius_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASTrackBot_Statics::NewProp_DamageRadius_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTrackBot_Statics::NewProp_SelfDamageInteval_MetaData[] = {
+		{ "Category", "TrackBot" },
+		{ "Comment", "//\xc8\xb7???\xd4\xbb\xd9\xb3???\xd6\xbb??????\xd2\xbb??\n" },
+		{ "ModuleRelativePath", "Public/AI/STrackBot.h" },
+		{ "ToolTip", "\xc8\xb7???\xd4\xbb\xd9\xb3???\xd6\xbb??????\xd2\xbb??" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASTrackBot_Statics::NewProp_SelfDamageInteval = { "SelfDamageInteval", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASTrackBot, SelfDamageInteval), METADATA_PARAMS(Z_Construct_UClass_ASTrackBot_Statics::NewProp_SelfDamageInteval_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASTrackBot_Statics::NewProp_SelfDamageInteval_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASTrackBot_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTrackBot_Statics::NewProp_BotMeshComp,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTrackBot_Statics::NewProp_SphereComp,
@@ -262,8 +298,11 @@ void EmptyLinkFunctionForGeneratedCodeSTrackBot() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTrackBot_Statics::NewProp_bUseVelocityChange,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTrackBot_Statics::NewProp_RequiredDistanceToTarget,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTrackBot_Statics::NewProp_ExplosionEffect,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTrackBot_Statics::NewProp_SelfDestructSound,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTrackBot_Statics::NewProp_ExplodeEffect,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTrackBot_Statics::NewProp_Damage,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTrackBot_Statics::NewProp_DamageRadius,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTrackBot_Statics::NewProp_SelfDamageInteval,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_ASTrackBot_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<ASTrackBot>::IsAbstract,
@@ -292,7 +331,7 @@ void EmptyLinkFunctionForGeneratedCodeSTrackBot() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASTrackBot, 4268435113);
+	IMPLEMENT_CLASS(ASTrackBot, 647916639);
 	template<> COUNTERSTRIKE_DEMO_API UClass* StaticClass<ASTrackBot>()
 	{
 		return ASTrackBot::StaticClass();
