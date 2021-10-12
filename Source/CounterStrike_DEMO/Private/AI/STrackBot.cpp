@@ -136,7 +136,7 @@ void ASTrackBot::Tick(float DeltaTime)
 
 void ASTrackBot::NotifyActorBeginOverlap(AActor* OtherActor)
 {
-	//Super::NotifyActorBeginOverlap(OtherActor);
+	Super::NotifyActorBeginOverlap(OtherActor);
 
 	if (!bStartSelfDestruction)
 	{
