@@ -22,6 +22,7 @@ void EmptyLinkFunctionForGeneratedCodeSTrackBot() {}
 	ENGINE_API UClass* Z_Construct_UClass_AController_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UParticleSystem_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(ASTrackBot::execHandleTakeAnyDamage)
@@ -129,6 +130,10 @@ void EmptyLinkFunctionForGeneratedCodeSTrackBot() {}
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_BotMeshComp;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SphereComp_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_SphereComp;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_HealthComp_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_HealthComp;
@@ -183,6 +188,14 @@ void EmptyLinkFunctionForGeneratedCodeSTrackBot() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASTrackBot_Statics::NewProp_BotMeshComp = { "BotMeshComp", nullptr, (EPropertyFlags)0x00200800000b0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASTrackBot, BotMeshComp), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASTrackBot_Statics::NewProp_BotMeshComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASTrackBot_Statics::NewProp_BotMeshComp_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTrackBot_Statics::NewProp_SphereComp_MetaData[] = {
+		{ "Category", "Components" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Public/AI/STrackBot.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ASTrackBot_Statics::NewProp_SphereComp = { "SphereComp", nullptr, (EPropertyFlags)0x00200800000b0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASTrackBot, SphereComp), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ASTrackBot_Statics::NewProp_SphereComp_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASTrackBot_Statics::NewProp_SphereComp_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ASTrackBot_Statics::NewProp_HealthComp_MetaData[] = {
 		{ "Category", "Components" },
@@ -243,6 +256,7 @@ void EmptyLinkFunctionForGeneratedCodeSTrackBot() {}
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ASTrackBot_Statics::NewProp_DamageRadius = { "DamageRadius", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ASTrackBot, DamageRadius), METADATA_PARAMS(Z_Construct_UClass_ASTrackBot_Statics::NewProp_DamageRadius_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_ASTrackBot_Statics::NewProp_DamageRadius_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ASTrackBot_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTrackBot_Statics::NewProp_BotMeshComp,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTrackBot_Statics::NewProp_SphereComp,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTrackBot_Statics::NewProp_HealthComp,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTrackBot_Statics::NewProp_MovementForce,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ASTrackBot_Statics::NewProp_bUseVelocityChange,
@@ -278,7 +292,7 @@ void EmptyLinkFunctionForGeneratedCodeSTrackBot() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ASTrackBot, 573874097);
+	IMPLEMENT_CLASS(ASTrackBot, 4268435113);
 	template<> COUNTERSTRIKE_DEMO_API UClass* StaticClass<ASTrackBot>()
 	{
 		return ASTrackBot::StaticClass();

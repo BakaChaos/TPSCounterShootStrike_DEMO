@@ -7,6 +7,7 @@
 #include "STrackBot.generated.h"
 
 class UHealthComponent;
+class USphereComponent;
 
 UCLASS()
 class COUNTERSTRIKE_DEMO_API ASTrackBot : public APawn
@@ -16,6 +17,8 @@ class COUNTERSTRIKE_DEMO_API ASTrackBot : public APawn
 protected:
 	UPROPERTY(VisibleDefaultsOnly, Category = "Components")
 	UStaticMeshComponent* BotMeshComp;
+	UPROPERTY(VisibleDefaultsOnly, Category = "Components")
+	USphereComponent* SphereComp;
 	UPROPERTY(VisibleDefaultsOnly, Category = "Components")
 	UHealthComponent* HealthComp;
 
@@ -40,6 +43,10 @@ protected:
 	float DamageRadius;
 	bool bExploded;
 
+	//自毁程序
+	FTimerHandle TH_SelfDamage;
+	bool bStartSelfDestruction;//确保自毁程序只会启动一次
+
 public:
 
 
@@ -54,11 +61,15 @@ protected:
 
 	void SelfDestruct();
 
+	void DamageSelf();
+
 public:	
 	// Sets default values for this pawn's properties
 	ASTrackBot();
 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	virtual void NotifyActorBeginOverlap(AActor* OtherActor) override;
 
 };

@@ -8,6 +8,7 @@
 #include "HealthComponent.h"
 #include "GameFramework/Character.h"
 #include "Kismet/GameplayStatics.h"
+#include "Components/SphereComponent.h"
 #include "Components/StaticMeshComponent.h"
 #include "Particles/ParticleSystemComponent.h"
 
@@ -17,20 +18,26 @@ ASTrackBot::ASTrackBot()
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	BotMeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComp"));
-	RootComponent = BotMeshComp;
-	HealthComp = CreateDefaultSubobject<UHealthComponent>(TEXT("HealComp"));
-	HealthComp->OnHealthChanged.AddDynamic(this, &ASTrackBot::HandleTakeAnyDamage);
-
-	BotMeshComp->SetSimulatePhysics(true);
-	//使mesh不能够影响导航
-	BotMeshComp->SetCanEverAffectNavigation(false);
-
 	bUseVelocityChange = true;
 	RequiredDistanceToTarget = 100.f;
 	MovementForce = 1000;
 	Damage = 40.f;
 	DamageRadius = 200.f;
+
+	BotMeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComp"));
+	RootComponent = BotMeshComp;
+	HealthComp = CreateDefaultSubobject<UHealthComponent>(TEXT("HealComp"));
+	HealthComp->OnHealthChanged.AddDynamic(this, &ASTrackBot::HandleTakeAnyDamage);
+	SphereComp = CreateDefaultSubobject<USphereComponent>(TEXT("SphereComp"));
+	SphereComp->SetSphereRadius(DamageRadius);
+	SphereComp->SetupAttachment(RootComponent);
+	SphereComp->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
+	SphereComp->SetCollisionResponseToAllChannels(ECR_Ignore);
+	SphereComp->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
+
+	BotMeshComp->SetSimulatePhysics(true);
+	//使mesh不能够影响导航
+	BotMeshComp->SetCanEverAffectNavigation(false);
 }
 
 // Called when the game starts or when spawned
@@ -97,6 +104,11 @@ void ASTrackBot::SelfDestruct()
 	Destroy();
 }
 
+void ASTrackBot::DamageSelf()
+{
+	UGameplayStatics::ApplyDamage(this, 20.f, GetInstigatorController(), this, nullptr);
+}
+
 // Called every frame
 void ASTrackBot::Tick(float DeltaTime)
 {
@@ -116,6 +128,22 @@ void ASTrackBot::Tick(float DeltaTime)
 		ForceDirection *= MovementForce;
 
 		BotMeshComp->AddForce(ForceDirection, NAME_None, bUseVelocityChange);
+	}
+}
+
+void ASTrackBot::NotifyActorBeginOverlap(AActor* OtherActor)
+{
+	//Super::NotifyActorBeginOverlap(OtherActor);
+
+	if (!bStartSelfDestruction)
+	{
+		APlayerCharacter* PlayerPawn = Cast<APlayerCharacter>(OtherActor);
+		if (PlayerPawn)
+		{
+			//发生重叠后如果为玩家则进行爆炸
+			GetWorldTimerManager().SetTimer(TH_SelfDamage, this, &ASTrackBot::DamageSelf, 0.5f, true, 0.f);
+			bStartSelfDestruction = true;
+		}
 	}
 }
 
