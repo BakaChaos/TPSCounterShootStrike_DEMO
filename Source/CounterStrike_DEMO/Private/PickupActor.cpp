@@ -4,6 +4,7 @@
 #include "PickupActor.h"
 #include "PowerupActor.h"
 #include "TimerManager.h"
+#include "PlayerCharacter.h"
 #include "Components/SphereComponent.h"
 #include "Components/DecalComponent.h"
 
@@ -45,14 +46,17 @@ void APickupActor::NotifyActorBeginOverlap(AActor* OtherActor)
 {
 	Super::NotifyActorBeginOverlap(OtherActor);
 
-	//如果该组件可用则给玩家施加buff
-	if (PowerupInstance)
+	if (Cast<APlayerCharacter>(OtherActor))
 	{
-		PowerupInstance->ActivatePowerup();
-		PowerupInstance = nullptr;
-
-		//设置计时器去重新生成该道具
-		GetWorldTimerManager().SetTimer(TH_RespawnTimer, this, &APickupActor::Respawn, CooldownDuration);
+		//如果该组件可用则给玩家施加buff
+		if (PowerupInstance)
+		{
+			PowerupInstance->ActivatePowerup();
+			PowerupInstance = nullptr;
+	
+			//设置计时器去重新生成该道具
+			GetWorldTimerManager().SetTimer(TH_RespawnTimer, this, &APickupActor::Respawn, CooldownDuration);
+		}
 	}
 }
 
