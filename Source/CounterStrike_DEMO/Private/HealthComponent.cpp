@@ -52,6 +52,19 @@ void UHealthComponent::HandleTakeAnyDamage(AActor* DamageActor, float Damage, co
 	OnHealthChanged.Broadcast(this, ActualHealth, Damage, DamageType, InstigatedBy, DamageCauser);
 }
 
+void UHealthComponent::Heal(float HealAmount)
+{
+	if (HealAmount <= 0.f || ActualHealth <= 0.f)
+	{
+		return;
+	}
+	ActualHealth = FMath::Clamp(ActualHealth + HealAmount, 0.f, DefaultHealth);
+	//SanitizeFloat可以忽略小数点后的无效零
+	UE_LOG(LogTemp, Log, TEXT("HealthChanged : %s (+ %s)"), *FString::SanitizeFloat(ActualHealth), *FString::SanitizeFloat(HealAmount));
+	//正值为造成伤害负值为回复血量
+	OnHealthChanged.Broadcast(this, ActualHealth, -HealAmount, nullptr, nullptr, nullptr);
+}
+
 void UHealthComponent::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
 {
 	Super::GetLifetimeReplicatedProps(OutLifetimeProps);

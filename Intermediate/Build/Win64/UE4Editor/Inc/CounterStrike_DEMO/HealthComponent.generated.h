@@ -43,12 +43,14 @@ static inline void FOnHealthChangedSignature_DelegateWrapper(const FMulticastScr
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_SPARSE_DATA
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_RPC_WRAPPERS \
  \
-	DECLARE_FUNCTION(execHandleTakeAnyDamage);
+	DECLARE_FUNCTION(execHandleTakeAnyDamage); \
+	DECLARE_FUNCTION(execHeal);
 
 
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
  \
-	DECLARE_FUNCTION(execHandleTakeAnyDamage);
+	DECLARE_FUNCTION(execHandleTakeAnyDamage); \
+	DECLARE_FUNCTION(execHeal);
 
 
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_HealthComponent_h_14_INCLASS_NO_PURE_DECLS \
