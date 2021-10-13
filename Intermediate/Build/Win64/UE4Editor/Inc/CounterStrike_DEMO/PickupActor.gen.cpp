@@ -122,12 +122,12 @@ void EmptyLinkFunctionForGeneratedCodePickupActor() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickupActor_Statics::NewProp_PowerupClass_MetaData[] = {
 		{ "Category", "PickupActor" },
-		{ "Comment", "//????Powerup????????\xd4\xb1???????\xd9\xb4????\xc9\xb8???\n" },
+		{ "Comment", "//????Powerup????????\xd4\xb1???????\xd9\xb4????\xc9\xb8???(EditInstanceOnly\xce\xaa???\xd4\xb6\xd4\xbe???\xca\xb5?????????\xc3\xb5????\xce\xb4?)\n" },
 		{ "ModuleRelativePath", "Public/PickupActor.h" },
-		{ "ToolTip", "????Powerup????????\xd4\xb1???????\xd9\xb4????\xc9\xb8???" },
+		{ "ToolTip", "????Powerup????????\xd4\xb1???????\xd9\xb4????\xc9\xb8???(EditInstanceOnly\xce\xaa???\xd4\xb6\xd4\xbe???\xca\xb5?????????\xc3\xb5????\xce\xb4?)" },
 	};
 #endif
-	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_APickupActor_Statics::NewProp_PowerupClass = { "PowerupClass", nullptr, (EPropertyFlags)0x0024080000010001, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APickupActor, PowerupClass), Z_Construct_UClass_APowerupActor_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_APickupActor_Statics::NewProp_PowerupClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APickupActor_Statics::NewProp_PowerupClass_MetaData)) };
+	const UE4CodeGen_Private::FClassPropertyParams Z_Construct_UClass_APickupActor_Statics::NewProp_PowerupClass = { "PowerupClass", nullptr, (EPropertyFlags)0x0024080000000801, UE4CodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APickupActor, PowerupClass), Z_Construct_UClass_APowerupActor_NoRegister, Z_Construct_UClass_UClass, METADATA_PARAMS(Z_Construct_UClass_APickupActor_Statics::NewProp_PowerupClass_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APickupActor_Statics::NewProp_PowerupClass_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APickupActor_Statics::NewProp_CooldownDuration_MetaData[] = {
 		{ "Category", "PickupActor" },
@@ -168,7 +168,7 @@ void EmptyLinkFunctionForGeneratedCodePickupActor() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APickupActor, 3682494553);
+	IMPLEMENT_CLASS(APickupActor, 1165970785);
 	template<> COUNTERSTRIKE_DEMO_API UClass* StaticClass<APickupActor>()
 	{
 		return APickupActor::StaticClass();

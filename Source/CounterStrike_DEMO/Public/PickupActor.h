@@ -22,8 +22,8 @@ protected:
 	USphereComponent* SphereComp;
 	UPROPERTY(VisibleAnywhere, Category = "Items")
 	UDecalComponent* DecalComp;
-	//创建Powerup类的类成员，方便再次生成该类
-	UPROPERTY(EditDefaultsOnly, Category = "PickupActor")
+	//创建Powerup类的类成员，方便再次生成该类(EditInstanceOnly为可以对具体实例进行设置的修饰词)
+	UPROPERTY(EditInstanceOnly, Category = "PickupActor")
 	TSubclassOf<APowerupActor> PowerupClass;
 	APowerupActor* PowerupInstance;
 
