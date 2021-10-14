@@ -26,6 +26,10 @@ protected:
 	int32 TicksProcessed;
 	FTimerHandle TH_PowerupTick;
 
+	//检测物品是否正在其效果
+	UPROPERTY(ReplicatedUsing = OnRep_OnPowerupActive)
+	bool bIsPowerupActive;
+
 public:
 	// Sets default values for this actor's properties
 	APowerupActor();
@@ -39,10 +43,15 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Powerups")
 	void OnPowerupTicked();
 
+	void GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const override;
+
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
 
 	UFUNCTION()
 	void OnTickPowerup();
+
+	UFUNCTION()
+	void OnRep_OnPowerupActive();
+	UFUNCTION(BlueprintImplementableEvent, Category = "Powerups")
+	void OnPowerupStateChanged(bool bNewIsActive);
 };

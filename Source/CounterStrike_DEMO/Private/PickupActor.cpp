@@ -21,14 +21,18 @@ APickupActor::APickupActor()
 	DecalComp->DecalSize = FVector(64.f, 75.f, 75.f);
 
 	CooldownDuration = 10.f;
+	SetReplicates(true);
 }
 
 // Called when the game starts or when spawned
 void APickupActor::BeginPlay()
 {
 	Super::BeginPlay();
+	if (GetLocalRole() == ROLE_Authority)
+	{
+		Respawn();
+	}
 	
-	Respawn();
 }
 
 void APickupActor::Respawn()
@@ -51,7 +55,7 @@ void APickupActor::NotifyActorBeginOverlap(AActor* OtherActor)
 	if (Cast<APlayerCharacter>(OtherActor))
 	{
 		//如果该组件可用则给玩家施加buff
-		if (PowerupInstance)
+		if (GetLocalRole() == ROLE_Authority && PowerupInstance)
 		{
 			PowerupInstance->ActivatePowerup();
 			PowerupInstance = nullptr;

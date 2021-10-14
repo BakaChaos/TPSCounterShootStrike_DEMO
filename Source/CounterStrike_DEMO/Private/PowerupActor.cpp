@@ -3,6 +3,7 @@
 
 #include "PowerupActor.h"
 #include "PickupActor.h"
+#include "Net/UnrealNetwork.h"
 
 // Sets default values
 APowerupActor::APowerupActor()
@@ -11,13 +12,8 @@ APowerupActor::APowerupActor()
 	TotalNumOfTicks = 0;
 
 	TicksProcessed = 0;
-}
 
-// Called when the game starts or when spawned
-void APowerupActor::BeginPlay()
-{
-	Super::BeginPlay();
-
+	SetReplicates(true);
 }
 
 void APowerupActor::OnTickPowerup()
@@ -27,13 +23,27 @@ void APowerupActor::OnTickPowerup()
 	if (TicksProcessed >= TotalNumOfTicks)
 	{
 		OnExpired();
+
+		bIsPowerupActive = false;
+		OnRep_OnPowerupActive();
+
 		GetWorldTimerManager().ClearTimer(TH_PowerupTick);
+
+		bIsPowerupActive = false;
 	}
+}
+
+//此函数不会被服务器调用
+void APowerupActor::OnRep_OnPowerupActive()
+{
+	OnPowerupStateChanged(bIsPowerupActive);
 }
 
 void APowerupActor::ActivatePowerup()
 {
 	OnActivated();
+	bIsPowerupActive = true;
+	OnRep_OnPowerupActive();
 
 	if (PowerupInterval > 0.f)
 	{
@@ -46,4 +56,9 @@ void APowerupActor::ActivatePowerup()
 	}
 }
 
+void APowerupActor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+	DOREPLIFETIME(APowerupActor, bIsPowerupActive);
+}
 

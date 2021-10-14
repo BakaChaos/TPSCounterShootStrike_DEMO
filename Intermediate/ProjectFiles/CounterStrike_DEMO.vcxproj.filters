@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\CounterStrike_DEMO.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{9F3BB774-FB1B-49C6-B33F-40DCD3C03953}</UniqueIdentifier>
+      <UniqueIdentifier>{84CB2E20-227A-49ED-97B0-9A104065D4A9}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\CounterStrike_DEMO.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{7C3F1D5A-E574-4A6F-A250-2CD2CC513634}</UniqueIdentifier>
+      <UniqueIdentifier>{7F22AE8C-E241-42D5-8979-F76DEEFD3923}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -29,7 +29,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\CounterStrike_DEMO">
-      <UniqueIdentifier>{882F1639-596C-4FA2-8FC2-4816E6EE1EBF}</UniqueIdentifier>
+      <UniqueIdentifier>{8CD36A35-BFD3-4E2F-9718-940DA2A31790}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\CounterStrike_DEMO\CounterStrike_DEMO.Build.cs">
       <Filter>Source\CounterStrike_DEMO</Filter>
@@ -41,7 +41,7 @@
       <Filter>Source\CounterStrike_DEMO</Filter>
     </ClInclude>
     <Filter Include="Source\CounterStrike_DEMO\Private">
-      <UniqueIdentifier>{669EB51F-561C-4275-907F-B30E0BEFCF9D}</UniqueIdentifier>
+      <UniqueIdentifier>{2F4CB248-58ED-42F0-A3E3-471E1CD8354D}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\HealthComponent.cpp">
       <Filter>Source\CounterStrike_DEMO\Private</Filter>
@@ -71,13 +71,13 @@
       <Filter>Source\CounterStrike_DEMO\Private</Filter>
     </ClCompile>
     <Filter Include="Source\CounterStrike_DEMO\Private\AI">
-      <UniqueIdentifier>{396425CC-2E50-4081-B7E6-95CB219310E8}</UniqueIdentifier>
+      <UniqueIdentifier>{4D4818E3-6A3A-4819-992D-B9D9CBFB82A9}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\AI\STrackBot.cpp">
       <Filter>Source\CounterStrike_DEMO\Private\AI</Filter>
     </ClCompile>
     <Filter Include="Source\CounterStrike_DEMO\Public">
-      <UniqueIdentifier>{2F8B8F4D-5995-488E-ADF9-6754C8481ABF}</UniqueIdentifier>
+      <UniqueIdentifier>{522300C5-1810-447E-B540-99733532A7C9}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\HealthComponent.h">
       <Filter>Source\CounterStrike_DEMO\Public</Filter>
@@ -107,7 +107,7 @@
       <Filter>Source\CounterStrike_DEMO\Public</Filter>
     </ClInclude>
     <Filter Include="Source\CounterStrike_DEMO\Public\AI">
-      <UniqueIdentifier>{7378E6C8-71B3-4FAF-AAC1-02974410A9AC}</UniqueIdentifier>
+      <UniqueIdentifier>{2EBCFB55-2114-4642-8ABA-60F744C2FC14}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\AI\STrackBot.h">
       <Filter>Source\CounterStrike_DEMO\Public\AI</Filter>

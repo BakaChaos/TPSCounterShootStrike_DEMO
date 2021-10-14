@@ -18,6 +18,13 @@ void EmptyLinkFunctionForGeneratedCodePowerupActor() {}
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_CounterStrike_DEMO();
 // End Cross Module References
+	DEFINE_FUNCTION(APowerupActor::execOnRep_OnPowerupActive)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->OnRep_OnPowerupActive();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(APowerupActor::execOnTickPowerup)
 	{
 		P_FINISH;
@@ -35,6 +42,13 @@ void EmptyLinkFunctionForGeneratedCodePowerupActor() {}
 	{
 		ProcessEvent(FindFunctionChecked(NAME_APowerupActor_OnExpired),NULL);
 	}
+	static FName NAME_APowerupActor_OnPowerupStateChanged = FName(TEXT("OnPowerupStateChanged"));
+	void APowerupActor::OnPowerupStateChanged(bool bNewIsActive)
+	{
+		PowerupActor_eventOnPowerupStateChanged_Parms Parms;
+		Parms.bNewIsActive=bNewIsActive ? true : false;
+		ProcessEvent(FindFunctionChecked(NAME_APowerupActor_OnPowerupStateChanged),&Parms);
+	}
 	static FName NAME_APowerupActor_OnPowerupTicked = FName(TEXT("OnPowerupTicked"));
 	void APowerupActor::OnPowerupTicked()
 	{
@@ -44,6 +58,7 @@ void EmptyLinkFunctionForGeneratedCodePowerupActor() {}
 	{
 		UClass* Class = APowerupActor::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "OnRep_OnPowerupActive", &APowerupActor::execOnRep_OnPowerupActive },
 			{ "OnTickPowerup", &APowerupActor::execOnTickPowerup },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -94,6 +109,40 @@ void EmptyLinkFunctionForGeneratedCodePowerupActor() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_APowerupActor_OnPowerupStateChanged_Statics
+	{
+		static void NewProp_bNewIsActive_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bNewIsActive;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_APowerupActor_OnPowerupStateChanged_Statics::NewProp_bNewIsActive_SetBit(void* Obj)
+	{
+		((PowerupActor_eventOnPowerupStateChanged_Parms*)Obj)->bNewIsActive = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_APowerupActor_OnPowerupStateChanged_Statics::NewProp_bNewIsActive = { "bNewIsActive", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(PowerupActor_eventOnPowerupStateChanged_Parms), &Z_Construct_UFunction_APowerupActor_OnPowerupStateChanged_Statics::NewProp_bNewIsActive_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_APowerupActor_OnPowerupStateChanged_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APowerupActor_OnPowerupStateChanged_Statics::NewProp_bNewIsActive,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APowerupActor_OnPowerupStateChanged_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Powerups" },
+		{ "ModuleRelativePath", "Public/PowerupActor.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APowerupActor_OnPowerupStateChanged_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APowerupActor, nullptr, "OnPowerupStateChanged", nullptr, nullptr, sizeof(PowerupActor_eventOnPowerupStateChanged_Parms), Z_Construct_UFunction_APowerupActor_OnPowerupStateChanged_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APowerupActor_OnPowerupStateChanged_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08080800, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APowerupActor_OnPowerupStateChanged_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APowerupActor_OnPowerupStateChanged_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_APowerupActor_OnPowerupStateChanged()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_APowerupActor_OnPowerupStateChanged_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_APowerupActor_OnPowerupTicked_Statics
 	{
 #if WITH_METADATA
@@ -116,6 +165,28 @@ void EmptyLinkFunctionForGeneratedCodePowerupActor() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_APowerupActor_OnPowerupTicked_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_APowerupActor_OnRep_OnPowerupActive_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APowerupActor_OnRep_OnPowerupActive_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/PowerupActor.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APowerupActor_OnRep_OnPowerupActive_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APowerupActor, nullptr, "OnRep_OnPowerupActive", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APowerupActor_OnRep_OnPowerupActive_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APowerupActor_OnRep_OnPowerupActive_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_APowerupActor_OnRep_OnPowerupActive()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_APowerupActor_OnRep_OnPowerupActive_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -160,6 +231,11 @@ void EmptyLinkFunctionForGeneratedCodePowerupActor() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_TotalNumOfTicks_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FIntPropertyParams NewProp_TotalNumOfTicks;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bIsPowerupActive_MetaData[];
+#endif
+		static void NewProp_bIsPowerupActive_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bIsPowerupActive;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -171,7 +247,9 @@ void EmptyLinkFunctionForGeneratedCodePowerupActor() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_APowerupActor_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_APowerupActor_OnActivated, "OnActivated" }, // 2774254224
 		{ &Z_Construct_UFunction_APowerupActor_OnExpired, "OnExpired" }, // 141554054
+		{ &Z_Construct_UFunction_APowerupActor_OnPowerupStateChanged, "OnPowerupStateChanged" }, // 752084947
 		{ &Z_Construct_UFunction_APowerupActor_OnPowerupTicked, "OnPowerupTicked" }, // 3404883884
+		{ &Z_Construct_UFunction_APowerupActor_OnRep_OnPowerupActive, "OnRep_OnPowerupActive" }, // 2718921409
 		{ &Z_Construct_UFunction_APowerupActor_OnTickPowerup, "OnTickPowerup" }, // 4020719189
 	};
 #if WITH_METADATA
@@ -196,9 +274,22 @@ void EmptyLinkFunctionForGeneratedCodePowerupActor() {}
 	};
 #endif
 	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_APowerupActor_Statics::NewProp_TotalNumOfTicks = { "TotalNumOfTicks", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APowerupActor, TotalNumOfTicks), METADATA_PARAMS(Z_Construct_UClass_APowerupActor_Statics::NewProp_TotalNumOfTicks_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APowerupActor_Statics::NewProp_TotalNumOfTicks_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APowerupActor_Statics::NewProp_bIsPowerupActive_MetaData[] = {
+		{ "Comment", "//??????\xc6\xb7?\xc7\xb7???????\xd0\xa7??\n" },
+		{ "ModuleRelativePath", "Public/PowerupActor.h" },
+		{ "ToolTip", "??????\xc6\xb7?\xc7\xb7???????\xd0\xa7??" },
+	};
+#endif
+	void Z_Construct_UClass_APowerupActor_Statics::NewProp_bIsPowerupActive_SetBit(void* Obj)
+	{
+		((APowerupActor*)Obj)->bIsPowerupActive = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_APowerupActor_Statics::NewProp_bIsPowerupActive = { "bIsPowerupActive", "OnRep_OnPowerupActive", (EPropertyFlags)0x0020080100000020, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(APowerupActor), &Z_Construct_UClass_APowerupActor_Statics::NewProp_bIsPowerupActive_SetBit, METADATA_PARAMS(Z_Construct_UClass_APowerupActor_Statics::NewProp_bIsPowerupActive_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APowerupActor_Statics::NewProp_bIsPowerupActive_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APowerupActor_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APowerupActor_Statics::NewProp_PowerupInterval,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APowerupActor_Statics::NewProp_TotalNumOfTicks,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APowerupActor_Statics::NewProp_bIsPowerupActive,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_APowerupActor_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<APowerupActor>::IsAbstract,
@@ -227,12 +318,22 @@ void EmptyLinkFunctionForGeneratedCodePowerupActor() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APowerupActor, 3758294436);
+	IMPLEMENT_CLASS(APowerupActor, 3611830844);
 	template<> COUNTERSTRIKE_DEMO_API UClass* StaticClass<APowerupActor>()
 	{
 		return APowerupActor::StaticClass();
 	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_APowerupActor(Z_Construct_UClass_APowerupActor, &APowerupActor::StaticClass, TEXT("/Script/CounterStrike_DEMO"), TEXT("APowerupActor"), false, nullptr, nullptr, nullptr);
+
+	void APowerupActor::ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const
+	{
+		static const FName Name_bIsPowerupActive(TEXT("bIsPowerupActive"));
+
+		const bool bIsValid = true
+			&& Name_bIsPowerupActive == ClassReps[(int32)ENetFields_Private::bIsPowerupActive].Property->GetFName();
+
+		checkf(bIsValid, TEXT("UHT Generated Rep Indices do not match runtime populated Rep Indices for properties in APowerupActor"));
+	}
 	DEFINE_VTABLE_PTR_HELPER_CTOR(APowerupActor);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 #ifdef _MSC_VER

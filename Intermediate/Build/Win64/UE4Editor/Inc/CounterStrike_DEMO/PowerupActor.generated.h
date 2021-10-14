@@ -16,15 +16,23 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PowerupActor_h_14_SPARSE_DATA
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PowerupActor_h_14_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execOnRep_OnPowerupActive); \
 	DECLARE_FUNCTION(execOnTickPowerup);
 
 
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PowerupActor_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execOnRep_OnPowerupActive); \
 	DECLARE_FUNCTION(execOnTickPowerup);
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PowerupActor_h_14_EVENT_PARMS
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PowerupActor_h_14_EVENT_PARMS \
+	struct PowerupActor_eventOnPowerupStateChanged_Parms \
+	{ \
+		bool bNewIsActive; \
+	};
+
+
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PowerupActor_h_14_CALLBACK_WRAPPERS
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PowerupActor_h_14_INCLASS_NO_PURE_DECLS \
 private: \
@@ -32,7 +40,13 @@ private: \
 	friend struct Z_Construct_UClass_APowerupActor_Statics; \
 public: \
 	DECLARE_CLASS(APowerupActor, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/CounterStrike_DEMO"), NO_API) \
-	DECLARE_SERIALIZER(APowerupActor)
+	DECLARE_SERIALIZER(APowerupActor) \
+	enum class ENetFields_Private : uint16 \
+	{ \
+		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
+		bIsPowerupActive=NETFIELD_REP_START, \
+		NETFIELD_REP_END=bIsPowerupActive	}; \
+	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PowerupActor_h_14_INCLASS \
@@ -41,7 +55,13 @@ private: \
 	friend struct Z_Construct_UClass_APowerupActor_Statics; \
 public: \
 	DECLARE_CLASS(APowerupActor, AActor, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/CounterStrike_DEMO"), NO_API) \
-	DECLARE_SERIALIZER(APowerupActor)
+	DECLARE_SERIALIZER(APowerupActor) \
+	enum class ENetFields_Private : uint16 \
+	{ \
+		NETFIELD_REP_START=(uint16)((int32)Super::ENetFields_Private::NETFIELD_REP_END + (int32)1), \
+		bIsPowerupActive=NETFIELD_REP_START, \
+		NETFIELD_REP_END=bIsPowerupActive	}; \
+	NO_API virtual void ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const override;
 
 
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PowerupActor_h_14_STANDARD_CONSTRUCTORS \
@@ -70,7 +90,8 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APowerupActor); \
 
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PowerupActor_h_14_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__PowerupInterval() { return STRUCT_OFFSET(APowerupActor, PowerupInterval); } \
-	FORCEINLINE static uint32 __PPO__TotalNumOfTicks() { return STRUCT_OFFSET(APowerupActor, TotalNumOfTicks); }
+	FORCEINLINE static uint32 __PPO__TotalNumOfTicks() { return STRUCT_OFFSET(APowerupActor, TotalNumOfTicks); } \
+	FORCEINLINE static uint32 __PPO__bIsPowerupActive() { return STRUCT_OFFSET(APowerupActor, bIsPowerupActive); }
 
 
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PowerupActor_h_11_PROLOG \

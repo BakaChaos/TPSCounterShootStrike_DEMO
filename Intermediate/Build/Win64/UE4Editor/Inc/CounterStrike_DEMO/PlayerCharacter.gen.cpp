@@ -260,7 +260,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 	{
 		((APlayerCharacter*)Obj)->bReload = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_bReload = { "bReload", nullptr, (EPropertyFlags)0x0020080000000034, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(APlayerCharacter), &Z_Construct_UClass_APlayerCharacter_Statics::NewProp_bReload_SetBit, METADATA_PARAMS(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_bReload_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_bReload_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_bReload = { "bReload", nullptr, (EPropertyFlags)0x0020080000000014, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(APlayerCharacter), &Z_Construct_UClass_APlayerCharacter_Statics::NewProp_bReload_SetBit, METADATA_PARAMS(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_bReload_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_bReload_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerCharacter_Statics::NewProp_bDied_MetaData[] = {
 		{ "Category", "Player" },
@@ -329,7 +329,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APlayerCharacter, 2575832647);
+	IMPLEMENT_CLASS(APlayerCharacter, 2860980834);
 	template<> COUNTERSTRIKE_DEMO_API UClass* StaticClass<APlayerCharacter>()
 	{
 		return APlayerCharacter::StaticClass();
@@ -339,12 +339,10 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 	void APlayerCharacter::ValidateGeneratedRepEnums(const TArray<struct FRepRecord>& ClassReps) const
 	{
 		static const FName Name_CurrentWeapon(TEXT("CurrentWeapon"));
-		static const FName Name_bReload(TEXT("bReload"));
 		static const FName Name_bDied(TEXT("bDied"));
 
 		const bool bIsValid = true
 			&& Name_CurrentWeapon == ClassReps[(int32)ENetFields_Private::CurrentWeapon].Property->GetFName()
-			&& Name_bReload == ClassReps[(int32)ENetFields_Private::bReload].Property->GetFName()
 			&& Name_bDied == ClassReps[(int32)ENetFields_Private::bDied].Property->GetFName();
 
 		checkf(bIsValid, TEXT("UHT Generated Rep Indices do not match runtime populated Rep Indices for properties in APlayerCharacter"));
