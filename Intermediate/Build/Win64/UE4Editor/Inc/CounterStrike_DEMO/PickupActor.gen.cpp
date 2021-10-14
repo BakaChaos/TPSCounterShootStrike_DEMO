@@ -134,7 +134,7 @@ void EmptyLinkFunctionForGeneratedCodePickupActor() {}
 		{ "ModuleRelativePath", "Public/PickupActor.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APickupActor_Statics::NewProp_CooldownDuration = { "CooldownDuration", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APickupActor, CooldownDuration), METADATA_PARAMS(Z_Construct_UClass_APickupActor_Statics::NewProp_CooldownDuration_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APickupActor_Statics::NewProp_CooldownDuration_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APickupActor_Statics::NewProp_CooldownDuration = { "CooldownDuration", nullptr, (EPropertyFlags)0x0020080000000801, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APickupActor, CooldownDuration), METADATA_PARAMS(Z_Construct_UClass_APickupActor_Statics::NewProp_CooldownDuration_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APickupActor_Statics::NewProp_CooldownDuration_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APickupActor_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickupActor_Statics::NewProp_SphereComp,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APickupActor_Statics::NewProp_DecalComp,
@@ -168,7 +168,7 @@ void EmptyLinkFunctionForGeneratedCodePickupActor() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APickupActor, 1165970785);
+	IMPLEMENT_CLASS(APickupActor, 3726211052);
 	template<> COUNTERSTRIKE_DEMO_API UClass* StaticClass<APickupActor>()
 	{
 		return APickupActor::StaticClass();
