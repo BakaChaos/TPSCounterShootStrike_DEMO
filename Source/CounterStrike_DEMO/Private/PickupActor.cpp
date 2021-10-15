@@ -57,7 +57,7 @@ void APickupActor::NotifyActorBeginOverlap(AActor* OtherActor)
 		//如果该组件可用则给玩家施加buff
 		if (GetLocalRole() == ROLE_Authority && PowerupInstance)
 		{
-			PowerupInstance->ActivatePowerup();
+			PowerupInstance->ActivatePowerup(OtherActor);
 			PowerupInstance = nullptr;
 	
 			//设置计时器去重新生成该道具

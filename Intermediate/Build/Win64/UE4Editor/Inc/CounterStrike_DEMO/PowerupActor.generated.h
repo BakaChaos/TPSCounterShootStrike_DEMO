@@ -8,6 +8,7 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
 #ifdef COUNTERSTRIKE_DEMO_PowerupActor_generated_h
 #error "PowerupActor.generated.h already included, missing '#pragma once' in PowerupActor.h"
 #endif
@@ -27,6 +28,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PowerupActor_h_14_EVENT_PARMS \
+	struct PowerupActor_eventOnActivated_Parms \
+	{ \
+		AActor* ActiveFor; \
+	}; \
 	struct PowerupActor_eventOnPowerupStateChanged_Parms \
 	{ \
 		bool bNewIsActive; \

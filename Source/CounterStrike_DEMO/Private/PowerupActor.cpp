@@ -13,6 +13,8 @@ APowerupActor::APowerupActor()
 
 	TicksProcessed = 0;
 
+	bIsPowerupActive = false;
+
 	SetReplicates(true);
 }
 
@@ -28,8 +30,6 @@ void APowerupActor::OnTickPowerup()
 		OnRep_OnPowerupActive();
 
 		GetWorldTimerManager().ClearTimer(TH_PowerupTick);
-
-		bIsPowerupActive = false;
 	}
 }
 
@@ -39,9 +39,9 @@ void APowerupActor::OnRep_OnPowerupActive()
 	OnPowerupStateChanged(bIsPowerupActive);
 }
 
-void APowerupActor::ActivatePowerup()
+void APowerupActor::ActivatePowerup(AActor* ActiveFor)
 {
-	OnActivated();
+	OnActivated(ActiveFor);
 	bIsPowerupActive = true;
 	OnRep_OnPowerupActive();
 

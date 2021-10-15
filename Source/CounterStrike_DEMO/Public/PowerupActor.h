@@ -34,9 +34,9 @@ public:
 	// Sets default values for this actor's properties
 	APowerupActor();
 
-	void ActivatePowerup();
+	void ActivatePowerup(AActor* ActiveFor);
 	UFUNCTION(BlueprintImplementableEvent, Category = "Powerups")
-	void OnActivated();
+	void OnActivated(AActor* ActiveFor);
 	UFUNCTION(BlueprintImplementableEvent, Category = "Powerups")
 	void OnExpired();
 	//当在更新效果的时候调用的函数

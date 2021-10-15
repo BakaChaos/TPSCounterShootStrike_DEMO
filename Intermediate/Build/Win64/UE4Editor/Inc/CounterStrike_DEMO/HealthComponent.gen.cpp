@@ -296,7 +296,9 @@ void EmptyLinkFunctionForGeneratedCodeHealthComponent() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UHealthComponent_Statics::NewProp_OnHealthChanged_MetaData[] = {
 		{ "Category", "Events" },
+		{ "Comment", "//?\xcb\xb9\xe3\xb2\xa5?\xc5\xba\xc5\xbb\xe1\xbd\xab???????\xdd\xb8??\xce\xba\xce\xba????\xf3\xb6\xa8\xb5?UFUNCTION?????\xd2\xb5??\xc3\xb6?\xd3\xa6?\xc4\xba???\n" },
 		{ "ModuleRelativePath", "Public/HealthComponent.h" },
+		{ "ToolTip", "?\xcb\xb9\xe3\xb2\xa5?\xc5\xba\xc5\xbb\xe1\xbd\xab???????\xdd\xb8??\xce\xba\xce\xba????\xf3\xb6\xa8\xb5?UFUNCTION?????\xd2\xb5??\xc3\xb6?\xd3\xa6?\xc4\xba???" },
 	};
 #endif
 	const UE4CodeGen_Private::FMulticastDelegatePropertyParams Z_Construct_UClass_UHealthComponent_Statics::NewProp_OnHealthChanged = { "OnHealthChanged", nullptr, (EPropertyFlags)0x0010000010080000, UE4CodeGen_Private::EPropertyGenFlags::InlineMulticastDelegate, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UHealthComponent, OnHealthChanged), Z_Construct_UDelegateFunction_CounterStrike_DEMO_OnHealthChangedSignature__DelegateSignature, METADATA_PARAMS(Z_Construct_UClass_UHealthComponent_Statics::NewProp_OnHealthChanged_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UHealthComponent_Statics::NewProp_OnHealthChanged_MetaData)) };
@@ -346,7 +348,7 @@ void EmptyLinkFunctionForGeneratedCodeHealthComponent() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UHealthComponent, 3405510049);
+	IMPLEMENT_CLASS(UHealthComponent, 4231329615);
 	template<> COUNTERSTRIKE_DEMO_API UClass* StaticClass<UHealthComponent>()
 	{
 		return UHealthComponent::StaticClass();

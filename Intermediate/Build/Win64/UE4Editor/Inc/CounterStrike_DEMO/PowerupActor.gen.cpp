@@ -17,6 +17,7 @@ void EmptyLinkFunctionForGeneratedCodePowerupActor() {}
 	COUNTERSTRIKE_DEMO_API UClass* Z_Construct_UClass_APowerupActor();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_CounterStrike_DEMO();
+	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(APowerupActor::execOnRep_OnPowerupActive)
 	{
@@ -33,9 +34,11 @@ void EmptyLinkFunctionForGeneratedCodePowerupActor() {}
 		P_NATIVE_END;
 	}
 	static FName NAME_APowerupActor_OnActivated = FName(TEXT("OnActivated"));
-	void APowerupActor::OnActivated()
+	void APowerupActor::OnActivated(AActor* ActiveFor)
 	{
-		ProcessEvent(FindFunctionChecked(NAME_APowerupActor_OnActivated),NULL);
+		PowerupActor_eventOnActivated_Parms Parms;
+		Parms.ActiveFor=ActiveFor;
+		ProcessEvent(FindFunctionChecked(NAME_APowerupActor_OnActivated),&Parms);
 	}
 	static FName NAME_APowerupActor_OnExpired = FName(TEXT("OnExpired"));
 	void APowerupActor::OnExpired()
@@ -65,10 +68,16 @@ void EmptyLinkFunctionForGeneratedCodePowerupActor() {}
 	}
 	struct Z_Construct_UFunction_APowerupActor_OnActivated_Statics
 	{
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ActiveFor;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
 #endif
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_APowerupActor_OnActivated_Statics::NewProp_ActiveFor = { "ActiveFor", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(PowerupActor_eventOnActivated_Parms, ActiveFor), Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_APowerupActor_OnActivated_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APowerupActor_OnActivated_Statics::NewProp_ActiveFor,
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APowerupActor_OnActivated_Statics::Function_MetaDataParams[] = {
@@ -76,7 +85,7 @@ void EmptyLinkFunctionForGeneratedCodePowerupActor() {}
 		{ "ModuleRelativePath", "Public/PowerupActor.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APowerupActor_OnActivated_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APowerupActor, nullptr, "OnActivated", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APowerupActor_OnActivated_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APowerupActor_OnActivated_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APowerupActor_OnActivated_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APowerupActor, nullptr, "OnActivated", nullptr, nullptr, sizeof(PowerupActor_eventOnActivated_Parms), Z_Construct_UFunction_APowerupActor_OnActivated_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APowerupActor_OnActivated_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APowerupActor_OnActivated_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APowerupActor_OnActivated_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_APowerupActor_OnActivated()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -245,7 +254,7 @@ void EmptyLinkFunctionForGeneratedCodePowerupActor() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_CounterStrike_DEMO,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_APowerupActor_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_APowerupActor_OnActivated, "OnActivated" }, // 2774254224
+		{ &Z_Construct_UFunction_APowerupActor_OnActivated, "OnActivated" }, // 3375018891
 		{ &Z_Construct_UFunction_APowerupActor_OnExpired, "OnExpired" }, // 141554054
 		{ &Z_Construct_UFunction_APowerupActor_OnPowerupStateChanged, "OnPowerupStateChanged" }, // 752084947
 		{ &Z_Construct_UFunction_APowerupActor_OnPowerupTicked, "OnPowerupTicked" }, // 3404883884
@@ -318,7 +327,7 @@ void EmptyLinkFunctionForGeneratedCodePowerupActor() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APowerupActor, 3611830844);
+	IMPLEMENT_CLASS(APowerupActor, 2889628461);
 	template<> COUNTERSTRIKE_DEMO_API UClass* StaticClass<APowerupActor>()
 	{
 		return APowerupActor::StaticClass();
