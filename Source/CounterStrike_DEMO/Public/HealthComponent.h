@@ -14,6 +14,7 @@ class COUNTERSTRIKE_DEMO_API UHealthComponent : public UActorComponent
 	GENERATED_BODY()
 
 public:	
+	//此广播信号会将参数传递给任何和其绑定的UFUNCTION，并且调用对应的函数
 	UPROPERTY(BlueprintAssignable, Category = "Events")
 	FOnHealthChangedSignature OnHealthChanged;
 

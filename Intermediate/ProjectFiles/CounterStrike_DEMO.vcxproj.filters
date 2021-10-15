@@ -55,12 +55,6 @@
     <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\PowerupActor.cpp">
       <Filter>Source\CounterStrike_DEMO\Private</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\SGameMode.cpp">
-      <Filter>Source\CounterStrike_DEMO\Private</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\SGameState.cpp">
-      <Filter>Source\CounterStrike_DEMO\Private</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\WeaponBase.cpp">
       <Filter>Source\CounterStrike_DEMO\Private</Filter>
     </ClCompile>
@@ -89,12 +83,6 @@
       <Filter>Source\CounterStrike_DEMO\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\PowerupActor.h">
-      <Filter>Source\CounterStrike_DEMO\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\SGameMode.h">
-      <Filter>Source\CounterStrike_DEMO\Public</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\SGameState.h">
       <Filter>Source\CounterStrike_DEMO\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\WeaponBase.h">
