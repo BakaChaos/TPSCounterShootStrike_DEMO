@@ -46,9 +46,13 @@ ASTrackBot::ASTrackBot()
 void ASTrackBot::BeginPlay()
 {
 	Super::BeginPlay();
-	
-	//找到移动起点的位置
-	NextPathPoint = GetNextPathPoint();
+
+	//此处会尝试在服务器和客户端运行，但客户端无法控制Path，会导致游戏崩溃
+	if (GetLocalRole() == ROLE_Authority)
+	{
+		//找到移动起点的位置
+		NextPathPoint = GetNextPathPoint();
+	}
 }
 
 FVector ASTrackBot::GetNextPathPoint()
@@ -97,14 +101,23 @@ void ASTrackBot::SelfDestruct()
 	}
 	bExploded = true;
 	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ExplosionEffect, GetActorLocation());
-
-	//加入忽略的对象(自身)
-	TArray<AActor*> IgnoredActors;
-	IgnoredActors.Add(this);
-
-	UGameplayStatics::ApplyRadialDamage(this, Damage, GetActorLocation(), DamageRadius, nullptr, IgnoredActors, this, GetInstigatorController(), true);
 	UGameplayStatics::PlaySoundAtLocation(this, ExplodeEffect, GetActorLocation());
-	Destroy();
+
+	//关闭可见和碰撞，销毁延迟2s，以防客户端未反应actor就已被销毁的问题
+	BotMeshComp->SetVisibility(false, true);
+	//BotMeshComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
+	if (GetLocalRole() == ROLE_Authority && !bExploded)
+	{
+		//加入忽略的对象(自身)
+		TArray<AActor*> IgnoredActors;
+		IgnoredActors.Add(this);
+	
+		UGameplayStatics::ApplyRadialDamage(this, Damage, GetActorLocation(), DamageRadius, nullptr, IgnoredActors, this, GetInstigatorController(), true);
+
+
+		SetLifeSpan(2.f);
+	}
 }
 
 void ASTrackBot::DamageSelf()
@@ -117,20 +130,23 @@ void ASTrackBot::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	float DistanceToTarget = (GetActorLocation() - NextPathPoint).Size();
-
-	//如果下一个目标点和玩家位置不相近则保持增加作用力直到接近目标
-	if (DistanceToTarget <= RequiredDistanceToTarget)
+	if (GetLocalRole() == ROLE_Authority)
 	{
-		NextPathPoint = GetNextPathPoint();
-	}
-	else
-	{
-		FVector ForceDirection = NextPathPoint - GetActorLocation();
-		ForceDirection.Normalize();
-		ForceDirection *= MovementForce;
-
-		BotMeshComp->AddForce(ForceDirection, NAME_None, bUseVelocityChange);
+		float DistanceToTarget = (GetActorLocation() - NextPathPoint).Size();
+	
+		//如果下一个目标点和玩家位置不相近则保持增加作用力直到接近目标
+		if (DistanceToTarget <= RequiredDistanceToTarget)
+		{
+			NextPathPoint = GetNextPathPoint();
+		}
+		else
+		{
+			FVector ForceDirection = NextPathPoint - GetActorLocation();
+			ForceDirection.Normalize();
+			ForceDirection *= MovementForce;
+	
+			BotMeshComp->AddForce(ForceDirection, NAME_None, bUseVelocityChange);
+		}
 	}
 }
 
@@ -138,13 +154,16 @@ void ASTrackBot::NotifyActorBeginOverlap(AActor* OtherActor)
 {
 	Super::NotifyActorBeginOverlap(OtherActor);
 
-	if (!bStartSelfDestruction)
+	if (!bStartSelfDestruction && !bExploded)
 	{
 		APlayerCharacter* PlayerPawn = Cast<APlayerCharacter>(OtherActor);
 		if (PlayerPawn)
 		{
 			//发生重叠后如果为玩家则进行爆炸
-			GetWorldTimerManager().SetTimer(TH_SelfDamage, this, &ASTrackBot::DamageSelf, SelfDamageInteval, true, 0.f);
+			if (GetLocalRole() == ROLE_Authority)
+			{
+				GetWorldTimerManager().SetTimer(TH_SelfDamage, this, &ASTrackBot::DamageSelf, SelfDamageInteval, true, 0.f);
+			}
 			bStartSelfDestruction = true;
 
 			UGameplayStatics::SpawnSoundAttached(SelfDestructSound, RootComponent);
