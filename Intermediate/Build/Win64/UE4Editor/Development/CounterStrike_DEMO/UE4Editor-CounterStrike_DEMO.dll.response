@@ -35,6 +35,7 @@
 /FUNCTIONPADMIN
 "G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\CounterStrike_DEMOEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
 "G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Development\CounterStrike_DEMO\STrackBot.cpp.obj"
+"G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Development\CounterStrike_DEMO\BotGameMode.cpp.obj"
 "G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Development\CounterStrike_DEMO\HealthComponent.cpp.obj"
 "G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Development\CounterStrike_DEMO\PickupActor.cpp.obj"
 "G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Development\CounterStrike_DEMO\PlayerCharacter.cpp.obj"
@@ -43,6 +44,7 @@
 "G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Development\CounterStrike_DEMO\Weapon_FRifle.cpp.obj"
 "G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Development\CounterStrike_DEMO\Weapon_Rifle.cpp.obj"
 "G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Development\CounterStrike_DEMO\CounterStrike_DEMO.cpp.obj"
+"G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Development\CounterStrike_DEMO\BotGameMode.gen.cpp.obj"
 "G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Development\CounterStrike_DEMO\CounterStrike_DEMO.init.gen.cpp.obj"
 "G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Development\CounterStrike_DEMO\HealthComponent.gen.cpp.obj"
 "G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Development\CounterStrike_DEMO\PickupActor.gen.cpp.obj"

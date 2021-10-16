@@ -62,7 +62,7 @@ FVector ASTrackBot::GetNextPathPoint()
 	//需要在.build.cs里添加依赖"NavigationSystem"
 	UNavigationPath* NavPath = UNavigationSystemV1::FindPathToActorSynchronously(this, GetActorLocation(), PlayPawn);
 
-	if (NavPath->PathPoints.Num() > 1)
+	if (NavPath && NavPath->PathPoints.Num() > 1)
 	{
 		return NavPath->PathPoints[1];
 	}
@@ -115,9 +115,8 @@ void ASTrackBot::SelfDestruct()
 	
 		UGameplayStatics::ApplyRadialDamage(this, Damage, GetActorLocation(), DamageRadius, nullptr, IgnoredActors, this, GetInstigatorController(), true);
 
-
-		SetLifeSpan(2.f);
 	}
+	SetLifeSpan(2.f);
 }
 
 void ASTrackBot::DamageSelf()
