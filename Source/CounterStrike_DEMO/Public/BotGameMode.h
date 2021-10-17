@@ -37,6 +37,9 @@ protected:
 	void PorpareForNextWave();
 	void CheckWaveState();
 
+	void CheckAnyPlayerAlive();
+	void GameOver();
+
 public:
 	ABotGameMode();
 

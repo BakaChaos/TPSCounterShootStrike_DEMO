@@ -68,6 +68,33 @@ void ABotGameMode::CheckWaveState()
 	}
 }
 
+void ABotGameMode::CheckAnyPlayerAlive()
+{
+	for (TActorIterator<APlayerController> It(GetWorld()); It; ++It)
+	{
+		APlayerController* PC = *It;
+		if (PC && PC->GetPawn())
+		{
+			APawn* PlayerPawn = PC->GetPawn();
+			UHealthComponent* PlayerHealthComp = Cast<UHealthComponent>(PlayerPawn->GetComponentByClass(UHealthComponent::StaticClass()));
+			//ensure:确保的确获得了玩家health组件，如果没有则会产生断点
+			if (ensure(PlayerHealthComp) && PlayerHealthComp->GetHealth() > 0.f)
+			{
+				//如果还有玩家有血量，则直接退出函数
+				return;
+			}
+		}
+	}
+	GameOver();
+}
+
+void ABotGameMode::GameOver()
+{
+	EndWave();
+	//游戏结束，提示玩家
+	UE_LOG(LogTemp, Log, TEXT("GameOver!"));
+}
+
 void ABotGameMode::SpawnBotTimerElapsed()
 {
 	SpawnNewBot();
@@ -82,4 +109,5 @@ void ABotGameMode::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);
 	CheckWaveState();
+	CheckAnyPlayerAlive();
 }
