@@ -107,14 +107,13 @@ void ASTrackBot::SelfDestruct()
 	BotMeshComp->SetVisibility(false, true);
 	//BotMeshComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
-	if (GetLocalRole() == ROLE_Authority && !bExploded)
+	if (GetLocalRole() == ROLE_Authority)
 	{
 		//加入忽略的对象(自身)
 		TArray<AActor*> IgnoredActors;
 		IgnoredActors.Add(this);
-	
-		UGameplayStatics::ApplyRadialDamage(this, Damage, GetActorLocation(), DamageRadius, nullptr, IgnoredActors, this, GetInstigatorController(), true);
 
+		UGameplayStatics::ApplyRadialDamage(this, Damage, GetActorLocation(), DamageRadius, nullptr, IgnoredActors, this, GetInstigatorController(), true);
 	}
 	SetLifeSpan(2.f);
 }

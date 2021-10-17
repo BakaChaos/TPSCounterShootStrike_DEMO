@@ -5,3 +5,6 @@ F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator
 F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
 F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Inc\CounterStrike_DEMO\BotGameMode.generated.h
+F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Public\EngineUtils.h
+G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\HealthComponent.h
+G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Inc\CounterStrike_DEMO\HealthComponent.generated.h

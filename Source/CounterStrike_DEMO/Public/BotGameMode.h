@@ -15,6 +15,7 @@ class COUNTERSTRIKE_DEMO_API ABotGameMode : public AGameModeBase
 	GENERATED_BODY()
 protected:
 	FTimerHandle TH_BotSpawner;
+	FTimerHandle TH_NextWaveStart;
 
 	int NumberOfBotToSpawn;
 	int WaveCount;
@@ -34,10 +35,12 @@ protected:
 	void StartWave();
 	void EndWave();
 	void PorpareForNextWave();
+	void CheckWaveState();
 
 public:
 	ABotGameMode();
 
 	virtual void StartPlay() override;
+	virtual void Tick(float DeltaSeconds) override;
 	
 };

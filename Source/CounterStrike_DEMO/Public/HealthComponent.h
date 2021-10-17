@@ -29,7 +29,7 @@ public:
 	UHealthComponent();
 	// Called every frame
 	//virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-	float GetHealth();
+	float GetHealth() const;
 
 	UFUNCTION(BlueprintCallable, Category = "Health")
 	void Heal(float HealAmount);

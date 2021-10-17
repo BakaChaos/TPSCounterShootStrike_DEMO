@@ -15,7 +15,7 @@ UHealthComponent::UHealthComponent()
 	SetIsReplicatedByDefault(true);
 }
 
-float UHealthComponent::GetHealth()
+float UHealthComponent::GetHealth() const
 {
 	return ActualHealth;
 }
