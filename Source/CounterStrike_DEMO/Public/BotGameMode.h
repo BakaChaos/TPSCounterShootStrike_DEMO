@@ -6,6 +6,8 @@
 #include "GameFramework/GameModeBase.h"
 #include "BotGameMode.generated.h"
 
+enum class EWaveState : uint8;
+
 /**
  * 
  */
@@ -39,6 +41,8 @@ protected:
 
 	void CheckAnyPlayerAlive();
 	void GameOver();
+
+	void SetWaveState(EWaveState NewState);
 
 public:
 	ABotGameMode();

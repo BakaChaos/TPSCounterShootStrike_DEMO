@@ -4,6 +4,7 @@
 #include "BotGameMode.h"
 #include "TimerManager.h"
 #include "EngineUtils.h"
+#include "BotGameState.h"
 #include "HealthComponent.h"
 
 ABotGameMode::ABotGameMode()
@@ -12,6 +13,9 @@ ABotGameMode::ABotGameMode()
 	//设置更新频率为一秒一次
 	PrimaryActorTick.bCanEverTick = true;
 	PrimaryActorTick.TickInterval = 1.f;
+
+	//设置默认的游戏状态
+	GameStateClass = ABotGameState::StaticClass();
 }
 
 void ABotGameMode::StartPlay()
@@ -25,16 +29,20 @@ void ABotGameMode::StartWave()
 	WaveCount++;
 	NumberOfBotToSpawn = 2 * WaveCount;
 	GetWorldTimerManager().SetTimer(TH_BotSpawner, this, &ABotGameMode::SpawnBotTimerElapsed, 1.f, true, 0.f);
+
+	SetWaveState(EWaveState::WaveInProgress);
 }
 
 void ABotGameMode::EndWave()
 {
 	GetWorldTimerManager().ClearTimer(TH_BotSpawner);
+	SetWaveState(EWaveState::WaitingToComplete);
 }
 
 void ABotGameMode::PorpareForNextWave()
 {
 	GetWorldTimerManager().SetTimer(TH_NextWaveStart, this, &ABotGameMode::StartWave, TimeBetweenWaves, false);
+	SetWaveState(EWaveState::WaitingToComplete);
 }
 
 void ABotGameMode::CheckWaveState()
@@ -64,6 +72,7 @@ void ABotGameMode::CheckWaveState()
 	}
 	if (!bIsAnyBotAlive)
 	{
+		SetWaveState(EWaveState::WaveComplete);
 		PorpareForNextWave();
 	}
 }
@@ -91,8 +100,18 @@ void ABotGameMode::CheckAnyPlayerAlive()
 void ABotGameMode::GameOver()
 {
 	EndWave();
+	SetWaveState(EWaveState::GameOver);
 	//游戏结束，提示玩家
 	UE_LOG(LogTemp, Log, TEXT("GameOver!"));
+}
+
+void ABotGameMode::SetWaveState(EWaveState NewState)
+{
+	ABotGameState* BotGS = GetGameState<ABotGameState>();
+	if (ensureAlways(BotGS))
+	{
+		BotGS->SetWaveState(NewState);
+	}
 }
 
 void ABotGameMode::SpawnBotTimerElapsed()
