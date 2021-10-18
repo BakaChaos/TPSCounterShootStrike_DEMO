@@ -1,4 +1,4 @@
-E:/GitProject/CounterStrike_DEMO/Intermediate/Build/Win64/CounterStrike_DEMOEditor/DebugGame/Engine/SharedPCH.Engine.NonOptimized.ShadowErrors.h
+G:/UEProject/BakaChaos/TPSCounterShootStrike_DEMO/Intermediate/Build/Win64/CounterStrike_DEMOEditor/DebugGame/Engine/SharedPCH.Engine.NonOptimized.ShadowErrors.h
 F:/epic/UE_4.26/Engine/Source/Runtime/Engine/Public/EngineSharedPCH.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\Containers/ContainersFwd.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\CoreTypes.h
@@ -10,24 +10,24 @@ f:\epic\ue_4.26\engine\source\runtime\core\public\GenericPlatform/GenericPlatfor
 f:\epic\ue_4.26\engine\source\runtime\core\public\GenericPlatform/GenericPlatform.h
 f:\epic\ue_4.26\engine\source\runtime\core\public\Windows/WindowsPlatformCodeAnalysis.h
 f:\epic\ue_4.26\engine\source\runtime\core\public\Windows/WindowsPlatform.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\sal.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\concurrencysal.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\sal.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\concurrencysal.h
 f:\epic\ue_4.26\engine\source\runtime\core\public\MSVC/MSVCPlatform.h
 f:\epic\ue_4.26\engine\source\runtime\core\public\Windows/WindowsPlatformCompilerSetup.h
 f:\epic\ue_4.26\engine\source\runtime\core\public\ProfilingDebugging/UMemoryDefines.h
 f:\epic\ue_4.26\engine\source\runtime\core\public\Misc/CoreMiscDefines.h
 f:\epic\ue_4.26\engine\source\runtime\core\public\Misc/CoreDefines.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\Traits/IsContiguousContainer.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\initializer_list
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\cstddef
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\initializer_list
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\cstddef
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\stddef.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\vadefs.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xtr1common
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\yvals_core.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xkeycheck.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\crtdefs.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\vadefs.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xtr1common
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\yvals_core.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xkeycheck.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\crtdefs.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\Misc/Exec.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\Misc/AssertionMacros.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\HAL/PlatformMisc.h
@@ -35,31 +35,31 @@ F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\GenericPlatform/GenericPlatfor
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\CoreFwd.h
 f:\epic\ue_4.26\engine\source\runtime\core\public\UObject/UObjectHierarchyFwd.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\HAL/PlatformCrt.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\new
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\exception
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\yvals.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\new
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\exception
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\yvals.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\crtdbg.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime_new_debug.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime_new.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\use_ansi.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\type_traits
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xstddef
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\cstdlib
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime_new_debug.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime_new.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\use_ansi.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\type_traits
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xstddef
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\cstdlib
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\stdlib.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_malloc.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_search.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wstdlib.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\limits.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\limits.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\math.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_math.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\malloc.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime_exception.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\eh.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime_exception.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\eh.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_terminate.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\wchar.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_memcpy_s.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\errno.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime_string.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime_string.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wconio.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_stdio_config.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wctype.h
@@ -73,7 +73,7 @@ C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\corecrt_wtime.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\sys/stat.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\sys/types.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\stdio.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\stdarg.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\stdarg.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\math.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\float.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\string.h
@@ -85,21 +85,21 @@ F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\GenericPlatform/GenericPlatfor
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\Windows/WindowsPlatformMemory.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\Windows/WindowsSystemIncludes.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\Windows/MinimalWindowsApi.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\intrin.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\intrin0.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\setjmp.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\immintrin.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\wmmintrin.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\nmmintrin.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\smmintrin.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\tmmintrin.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\pmmintrin.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\emmintrin.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xmmintrin.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\mmintrin.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\zmmintrin.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\ammintrin.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\stdint.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\intrin.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\intrin0.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\setjmp.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\immintrin.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\wmmintrin.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\nmmintrin.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\smmintrin.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\tmmintrin.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\pmmintrin.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\emmintrin.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xmmintrin.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\mmintrin.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\zmmintrin.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\ammintrin.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\stdint.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt\tchar.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\intsafe.h
 C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared\winapifamily.h
@@ -421,8 +421,8 @@ F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\Misc/BufferedOutputDevice.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\Containers/ResourceArray.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\Containers/DynamicRHIResourceArray.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\Serialization/MemoryImage.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\typeinfo
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime_typeinfo.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\typeinfo
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\vcruntime_typeinfo.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\Serialization/CustomVersion.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\Misc/CommandLine.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\Misc/OutputDeviceError.h
@@ -594,32 +594,32 @@ f:\epic\ue_4.26\engine\source\runtime\slatecore\public\Debugging/SlateDebugging.
 f:\epic\ue_4.26\engine\source\runtime\slatecore\public\FastUpdate/WidgetUpdateFlags.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\ProfilingDebugging/CsvProfiler.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Core\Public\ProfilingDebugging/CsvProfilerTrace.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\atomic
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xatomic.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xatomic0.h
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xutility
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\climits
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\utility
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\iosfwd
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\cstdio
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\cstring
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\cwchar
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
-D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\atomic
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xatomic.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xatomic0.h
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xutility
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\climits
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\utility
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\iosfwd
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\cstdio
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\cstring
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\cwchar
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
+D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE\xxatomic
 f:\epic\ue_4.26\engine\source\runtime\slatecore\public\Widgets/InvalidateWidgetReason.h
 F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\SlateCore\SlateDebugging.generated.h
 f:\epic\ue_4.26\engine\source\runtime\slatecore\public\Trace/SlateTrace.h

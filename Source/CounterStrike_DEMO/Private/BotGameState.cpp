@@ -11,7 +11,7 @@ void ABotGameState::OnRep_WaveState(EWaveState OldState)
 
 void ABotGameState::SetWaveState(EWaveState NewState)
 {
-	if (GetOwner()->GetLocalRole() == ROLE_Authority)
+	if (GetLocalRole() == ROLE_Authority)
 	{
 		EWaveState OldState = WaveState;
 		WaveState = NewState;

@@ -24,6 +24,8 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "HealthComponent")
 	float DefaultHealth;
 
+	bool bIsDead;
+
 public:	
 	// Sets default values for this component's properties
 	UHealthComponent();

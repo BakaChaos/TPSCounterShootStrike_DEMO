@@ -11,6 +11,7 @@
 #endif
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeCounterStrike_DEMO_init() {}
+	COUNTERSTRIKE_DEMO_API UFunction* Z_Construct_UDelegateFunction_CounterStrike_DEMO_OnActorKilled__DelegateSignature();
 	COUNTERSTRIKE_DEMO_API UFunction* Z_Construct_UDelegateFunction_CounterStrike_DEMO_OnHealthChangedSignature__DelegateSignature();
 	UPackage* Z_Construct_UPackage__Script_CounterStrike_DEMO()
 	{
@@ -18,6 +19,7 @@ void EmptyLinkFunctionForGeneratedCodeCounterStrike_DEMO_init() {}
 		if (!ReturnPackage)
 		{
 			static UObject* (*const SingletonFuncArray[])() = {
+				(UObject* (*)())Z_Construct_UDelegateFunction_CounterStrike_DEMO_OnActorKilled__DelegateSignature,
 				(UObject* (*)())Z_Construct_UDelegateFunction_CounterStrike_DEMO_OnHealthChangedSignature__DelegateSignature,
 			};
 			static const UE4CodeGen_Private::FPackageParams PackageParams = {
@@ -25,8 +27,8 @@ void EmptyLinkFunctionForGeneratedCodeCounterStrike_DEMO_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x46C4D26F,
-				0x548CCD77,
+				0x77BB75E6,
+				0xD245677E,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

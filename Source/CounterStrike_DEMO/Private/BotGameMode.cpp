@@ -5,6 +5,7 @@
 #include "TimerManager.h"
 #include "EngineUtils.h"
 #include "BotGameState.h"
+#include "BotPlayerState.h"
 #include "HealthComponent.h"
 
 ABotGameMode::ABotGameMode()
@@ -16,6 +17,7 @@ ABotGameMode::ABotGameMode()
 
 	//设置默认的游戏状态
 	GameStateClass = ABotGameState::StaticClass();
+	PlayerStateClass = ABotPlayerState::StaticClass();
 }
 
 void ABotGameMode::StartPlay()

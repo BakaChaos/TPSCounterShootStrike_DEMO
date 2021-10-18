@@ -29,7 +29,7 @@
 /wd4244
 /wd4838
 /I .
-/I E:\GitProject\CounterStrike_DEMO\Source\CounterStrike_DEMO\Private
+/I G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Private
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\Engine
 /I Runtime
 /I Runtime\Engine\Classes
@@ -229,9 +229,9 @@
 /I Editor\Kismet\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\ClothingSystemRuntimeInterface
 /I Runtime\ClothingSystemRuntimeInterface\Public
-/I E:\GitProject\CounterStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Inc\CounterStrike_DEMO
-/I E:\GitProject\CounterStrike_DEMO\Source
-/I E:\GitProject\CounterStrike_DEMO\Source\CounterStrike_DEMO\Public
+/I G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Inc\CounterStrike_DEMO
+/I G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source
+/I G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public
 /I ThirdParty\PhysX3\PxShared\include
 /I ThirdParty\PhysX3\PxShared\include\cudamanager
 /I ThirdParty\PhysX3\PxShared\include\filebuf
@@ -255,18 +255,18 @@
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include
 /I ThirdParty\PhysX3\APEX_1.4\shared\internal\include
-/I D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE
+/I D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE
 /I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.2\include\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"
-/FI"E:\GitProject\CounterStrike_DEMO\Intermediate\Build\Win64\CounterStrike_DEMOEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h"
-/Yu"E:\GitProject\CounterStrike_DEMO\Intermediate\Build\Win64\CounterStrike_DEMOEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h"
-/Fp"E:\GitProject\CounterStrike_DEMO\Intermediate\Build\Win64\CounterStrike_DEMOEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h.pch"
-"E:\GitProject\CounterStrike_DEMO\Source\CounterStrike_DEMO\Private\Weapon_Rifle.cpp"
-/FI"E:\GitProject\CounterStrike_DEMO\Intermediate\Build\Win64\UE4Editor\DebugGame\CounterStrike_DEMO\Definitions.CounterStrike_DEMO.h"
-/Fo"E:\GitProject\CounterStrike_DEMO\Intermediate\Build\Win64\UE4Editor\DebugGame\CounterStrike_DEMO\Weapon_Rifle.cpp.obj"
+/FI"G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\CounterStrike_DEMOEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h"
+/Yu"G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\CounterStrike_DEMOEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h"
+/Fp"G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\CounterStrike_DEMOEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h.pch"
+"G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Private\Weapon_Rifle.cpp"
+/FI"G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\DebugGame\CounterStrike_DEMO\Definitions.CounterStrike_DEMO.h"
+/Fo"G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\DebugGame\CounterStrike_DEMO\Weapon_Rifle.cpp.obj"
 /TP
 /GR-
 /W4

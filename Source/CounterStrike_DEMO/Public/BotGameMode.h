@@ -8,6 +8,8 @@
 
 enum class EWaveState : uint8;
 
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams(FOnActorKilled, AActor*, VictimActor, AActor*, KillerActor, AController*, KillerController);
+
 /**
  * 
  */
@@ -26,6 +28,9 @@ protected:
 	float TimeBetweenWaves;
 
 public:
+	//创建要被广播的信号
+	UPROPERTY(BlueprintAssignable, Category = "GameMode")
+	FOnActorKilled OnActorKilled;
 
 protected:
 	UFUNCTION(BlueprintImplementableEvent, Category ="GameMode")

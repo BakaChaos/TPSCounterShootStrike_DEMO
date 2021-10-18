@@ -251,17 +251,17 @@
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include
 /I ThirdParty\PhysX3\APEX_1.4\shared\internal\include
-/I D:\VS2017\VC\Tools\MSVC\14.16.27023\INCLUDE
+/I D:\VisualStudio\VC\Tools\MSVC\14.16.27023\INCLUDE
 /I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.2\include\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"
-/I E:\GitProject\CounterStrike_DEMO\Intermediate\Build\Win64\CounterStrike_DEMOEditor\DebugGame\Engine
-/Yc"E:\GitProject\CounterStrike_DEMO\Intermediate\Build\Win64\CounterStrike_DEMOEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h"
-/Fp"E:\GitProject\CounterStrike_DEMO\Intermediate\Build\Win64\CounterStrike_DEMOEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h.pch"
-"E:\GitProject\CounterStrike_DEMO\Intermediate\Build\Win64\CounterStrike_DEMOEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.cpp"
-/Fo"E:\GitProject\CounterStrike_DEMO\Intermediate\Build\Win64\CounterStrike_DEMOEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h.obj"
+/I G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\CounterStrike_DEMOEditor\DebugGame\Engine
+/Yc"G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\CounterStrike_DEMOEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h"
+/Fp"G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\CounterStrike_DEMOEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h.pch"
+"G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\CounterStrike_DEMOEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.cpp"
+/Fo"G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\CounterStrike_DEMOEditor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h.obj"
 /TP
 /GR-
 /W4

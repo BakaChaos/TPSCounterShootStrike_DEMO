@@ -2,6 +2,7 @@
 
 
 #include "HealthComponent.h"
+#include "BotGameMode.h"
 #include "Net/UnrealNetwork.h"
 
 // Sets default values for this component's properties
@@ -11,6 +12,7 @@ UHealthComponent::UHealthComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
+	bIsDead = false;
 	DefaultHealth = 100.f;
 	SetIsReplicatedByDefault(true);
 }
@@ -44,7 +46,7 @@ void UHealthComponent::OnRep_Health(float OldHealth)
 
 void UHealthComponent::HandleTakeAnyDamage(AActor* DamageActor, float Damage, const class UDamageType* DamageType, class AController* InstigatedBy, AActor* DamageCauser)
 {
-	if (Damage <= 0.f)
+	if (Damage <= 0.f || bIsDead)
 	{
 		return;
 	}
@@ -54,6 +56,17 @@ void UHealthComponent::HandleTakeAnyDamage(AActor* DamageActor, float Damage, co
 	UE_LOG(LogTemp, Log, TEXT("HealthChanged : %s"), *FString::SanitizeFloat(ActualHealth));
 
 	OnHealthChanged.Broadcast(this, ActualHealth, Damage, DamageType, InstigatedBy, DamageCauser);
+
+	bIsDead = ActualHealth <= 0.f;
+	if (bIsDead)
+	{
+		ABotGameMode* GM = Cast<ABotGameMode>(GetWorld()->GetAuthGameMode());
+		if (GM)
+		{
+			//此时DamageCauser为手上拿的武器，逻辑不正确
+			GM->OnActorKilled.Broadcast(GetOwner(), DamageCauser, InstigatedBy);
+		}
+	}
 }
 
 void UHealthComponent::Heal(float HealAmount)

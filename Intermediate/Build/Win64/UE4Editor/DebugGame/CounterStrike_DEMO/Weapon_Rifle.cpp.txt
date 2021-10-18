@@ -1,5 +1,5 @@
-E:\GitProject\CounterStrike_DEMO\Intermediate\Build\Win64\UE4Editor\DebugGame\CounterStrike_DEMO\Definitions.CounterStrike_DEMO.h
-E:\GitProject\CounterStrike_DEMO\Source\CounterStrike_DEMO\Public\Weapon_Rifle.h
-e:\gitproject\counterstrike_demo\source\counterstrike_demo\public\WeaponBase.h
-E:\GitProject\CounterStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Inc\CounterStrike_DEMO\WeaponBase.generated.h
-E:\GitProject\CounterStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Inc\CounterStrike_DEMO\Weapon_Rifle.generated.h
+G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\DebugGame\CounterStrike_DEMO\Definitions.CounterStrike_DEMO.h
+G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\Weapon_Rifle.h
+g:\ueproject\bakachaos\tpscountershootstrike_demo\source\counterstrike_demo\public\WeaponBase.h
+G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Inc\CounterStrike_DEMO\WeaponBase.generated.h
+G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Inc\CounterStrike_DEMO\Weapon_Rifle.generated.h
