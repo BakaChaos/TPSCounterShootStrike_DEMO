@@ -1,10 +1,12 @@
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\AI\STrackBot.h
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\BotGameMode.h
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\BotGameState.h
+G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\BotPlayerState.h
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\HealthComponent.h
+G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\PickupActor.h
+G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\PickupItem.h
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\PlayerCharacter.h
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\PowerupActor.h
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\WeaponBase.h
-G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\PickupActor.h
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\Weapon_Rifle.h
-G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\BotPlayerState.h
+G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\GamePlayerController.h

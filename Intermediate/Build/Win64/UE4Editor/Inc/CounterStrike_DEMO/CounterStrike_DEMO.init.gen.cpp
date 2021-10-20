@@ -27,8 +27,8 @@ void EmptyLinkFunctionForGeneratedCodeCounterStrike_DEMO_init() {}
 				SingletonFuncArray,
 				UE_ARRAY_COUNT(SingletonFuncArray),
 				PKG_CompiledIn | 0x00000000,
-				0x77BB75E6,
-				0xD245677E,
+				0x80BAF877,
+				0xC323A52F,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

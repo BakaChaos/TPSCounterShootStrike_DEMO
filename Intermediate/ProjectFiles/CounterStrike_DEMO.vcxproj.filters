@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\CounterStrike_DEMO.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{89263B47-C5EC-4824-892D-EED23959F755}</UniqueIdentifier>
+      <UniqueIdentifier>{59D2F819-4BA6-4BA4-AB23-D7795CF2A21F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\CounterStrike_DEMO.Target.cs">
       <Filter>Source</Filter>
@@ -14,7 +14,7 @@
     <None Include="..\..\.gitattributes" />
     <None Include="..\..\.gitignore" />
     <Filter Include="Config">
-      <UniqueIdentifier>{0C4198C3-3545-4B16-B62E-D7D289784B15}</UniqueIdentifier>
+      <UniqueIdentifier>{929EAD3E-D702-4173-9F4D-B0C78F49DC8F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -29,7 +29,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\CounterStrike_DEMO">
-      <UniqueIdentifier>{81120AFA-95C3-41FA-A886-C50AF35D87B0}</UniqueIdentifier>
+      <UniqueIdentifier>{29CD34F9-32BF-46E1-A68A-102414992AA7}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\CounterStrike_DEMO\CounterStrike_DEMO.Build.cs">
       <Filter>Source\CounterStrike_DEMO</Filter>
@@ -41,7 +41,7 @@
       <Filter>Source\CounterStrike_DEMO</Filter>
     </ClInclude>
     <Filter Include="Source\CounterStrike_DEMO\Private">
-      <UniqueIdentifier>{FE967558-CB7E-415F-8B83-77638B60E9C2}</UniqueIdentifier>
+      <UniqueIdentifier>{7196C5D8-E904-4C7B-B996-8BE5E5039251}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\BotGameMode.cpp">
       <Filter>Source\CounterStrike_DEMO\Private</Filter>
@@ -52,10 +52,16 @@
     <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\BotPlayerState.cpp">
       <Filter>Source\CounterStrike_DEMO\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\GamePlayerController.cpp">
+      <Filter>Source\CounterStrike_DEMO\Private</Filter>
+    </ClCompile>
     <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\HealthComponent.cpp">
       <Filter>Source\CounterStrike_DEMO\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\PickupActor.cpp">
+      <Filter>Source\CounterStrike_DEMO\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\PickupItem.cpp">
       <Filter>Source\CounterStrike_DEMO\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\PlayerCharacter.cpp">
@@ -71,13 +77,13 @@
       <Filter>Source\CounterStrike_DEMO\Private</Filter>
     </ClCompile>
     <Filter Include="Source\CounterStrike_DEMO\Private\AI">
-      <UniqueIdentifier>{D76B6059-2E4E-4C98-AA7E-2F89D1285EFF}</UniqueIdentifier>
+      <UniqueIdentifier>{18D5C407-0538-45EA-AD1D-C1E17F437C43}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\CounterStrike_DEMO\Private\AI\STrackBot.cpp">
       <Filter>Source\CounterStrike_DEMO\Private\AI</Filter>
     </ClCompile>
     <Filter Include="Source\CounterStrike_DEMO\Public">
-      <UniqueIdentifier>{0547FBE4-8737-42AF-8CD2-AC89A0E28BA9}</UniqueIdentifier>
+      <UniqueIdentifier>{0A79BC47-65AA-4334-A9D5-3FA6D500E62E}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\BotGameMode.h">
       <Filter>Source\CounterStrike_DEMO\Public</Filter>
@@ -88,10 +94,16 @@
     <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\BotPlayerState.h">
       <Filter>Source\CounterStrike_DEMO\Public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\GamePlayerController.h">
+      <Filter>Source\CounterStrike_DEMO\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\HealthComponent.h">
       <Filter>Source\CounterStrike_DEMO\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\PickupActor.h">
+      <Filter>Source\CounterStrike_DEMO\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\PickupItem.h">
       <Filter>Source\CounterStrike_DEMO\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\PlayerCharacter.h">
@@ -107,7 +119,7 @@
       <Filter>Source\CounterStrike_DEMO\Public</Filter>
     </ClInclude>
     <Filter Include="Source\CounterStrike_DEMO\Public\AI">
-      <UniqueIdentifier>{C184BF1A-FD3A-4AD5-9663-D1C3C6A2ED22}</UniqueIdentifier>
+      <UniqueIdentifier>{99301D48-E616-413D-A1C3-A32B97612948}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\CounterStrike_DEMO\Public\AI\STrackBot.h">
       <Filter>Source\CounterStrike_DEMO\Public\AI</Filter>
