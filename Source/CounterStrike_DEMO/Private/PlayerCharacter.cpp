@@ -76,6 +76,18 @@ void APlayerCharacter::OnHealthChanged(UHealthComponent* OwningHealthComp, float
 	}
 }
 
+void APlayerCharacter::AddItemToBackPackByID(FName ID)
+{
+	if (ItemDB)
+	{
+		UDataTable* ItemTable = ItemDB;
+		FPickItem* ItemToAdd = ItemTable->FindRow<FPickItem>(ID, "");
+		if (ItemToAdd)
+		{
+			PlayerBackPack.Add(*ItemToAdd);
+		}
+	}
+}
 
 // Called every frame
 void APlayerCharacter::Tick(float DeltaTime)

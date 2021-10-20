@@ -16,7 +16,6 @@ class COUNTERSTRIKE_DEMO_API AGamePlayerController : public APlayerController
 {
 	GENERATED_BODY()
 public:
-	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "CurrentItem")
-	class APickupItem* CurrentPickupItem;
+
 
 };

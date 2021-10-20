@@ -27,6 +27,7 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "GameMode")
 	float TimeBetweenWaves;
 
+
 public:
 	//创建要被广播的信号
 	UPROPERTY(BlueprintAssignable, Category = "GameMode")

@@ -13,20 +13,36 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define COUNTERSTRIKE_DEMO_PickupItem_generated_h
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_SPARSE_DATA
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_RPC_WRAPPERS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_32_GENERATED_BODY \
+	friend struct Z_Construct_UScriptStruct_FPickItem_Statics; \
+	COUNTERSTRIKE_DEMO_API static class UScriptStruct* StaticStruct(); \
+	typedef FTableRowBase Super;
+
+
+template<> COUNTERSTRIKE_DEMO_API UScriptStruct* StaticStruct<struct FPickItem>();
+
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_15_GENERATED_BODY \
+	friend struct Z_Construct_UScriptStruct_FCraftingInfo_Statics; \
+	COUNTERSTRIKE_DEMO_API static class UScriptStruct* StaticStruct(); \
+	typedef FTableRowBase Super;
+
+
+template<> COUNTERSTRIKE_DEMO_API UScriptStruct* StaticStruct<struct FCraftingInfo>();
+
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_SPARSE_DATA
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execGetUserText);
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execGetUserText);
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_EVENT_PARMS
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_CALLBACK_WRAPPERS
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_INCLASS_NO_PURE_DECLS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_EVENT_PARMS
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_CALLBACK_WRAPPERS
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAPickupItem(); \
 	friend struct Z_Construct_UClass_APickupItem_Statics; \
@@ -35,7 +51,7 @@ public: \
 	DECLARE_SERIALIZER(APickupItem)
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_INCLASS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_INCLASS \
 private: \
 	static void StaticRegisterNativesAPickupItem(); \
 	friend struct Z_Construct_UClass_APickupItem_Statics; \
@@ -44,7 +60,7 @@ public: \
 	DECLARE_SERIALIZER(APickupItem)
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_STANDARD_CONSTRUCTORS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API APickupItem(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(APickupItem) \
@@ -57,7 +73,7 @@ private: \
 public:
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_ENHANCED_CONSTRUCTORS \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API APickupItem(APickupItem&&); \
@@ -68,38 +84,39 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APickupItem); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(APickupItem)
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_PRIVATE_PROPERTY_OFFSET \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__ItemName() { return STRUCT_OFFSET(APickupItem, ItemName); } \
 	FORCEINLINE static uint32 __PPO__DoAction() { return STRUCT_OFFSET(APickupItem, DoAction); } \
-	FORCEINLINE static uint32 __PPO__SphereMesh() { return STRUCT_OFFSET(APickupItem, SphereMesh); }
+	FORCEINLINE static uint32 __PPO__SphereMesh() { return STRUCT_OFFSET(APickupItem, SphereMesh); } \
+	FORCEINLINE static uint32 __PPO__ItemID() { return STRUCT_OFFSET(APickupItem, ItemID); }
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_11_PROLOG \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_EVENT_PARMS
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_68_PROLOG \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_EVENT_PARMS
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_GENERATED_BODY_LEGACY \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_PRIVATE_PROPERTY_OFFSET \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_SPARSE_DATA \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_RPC_WRAPPERS \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_CALLBACK_WRAPPERS \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_INCLASS \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_STANDARD_CONSTRUCTORS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_PRIVATE_PROPERTY_OFFSET \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_SPARSE_DATA \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_RPC_WRAPPERS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_CALLBACK_WRAPPERS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_INCLASS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_GENERATED_BODY \
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_PRIVATE_PROPERTY_OFFSET \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_SPARSE_DATA \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_CALLBACK_WRAPPERS \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_INCLASS_NO_PURE_DECLS \
-	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_14_ENHANCED_CONSTRUCTORS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_PRIVATE_PROPERTY_OFFSET \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_SPARSE_DATA \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_RPC_WRAPPERS_NO_PURE_DECLS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_CALLBACK_WRAPPERS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_INCLASS_NO_PURE_DECLS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PickupItem_h_71_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

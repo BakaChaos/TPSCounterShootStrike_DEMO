@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "PickupItem.h"
 #include "PlayerCharacter.generated.h"
 
 class UCameraComponent;
@@ -11,6 +12,7 @@ class UMeshComponent;
 class AWeapon_Rifle;
 class USpringArmComponent;
 class UHealthComponent;
+class APickupItem;
 
 UCLASS()
 class COUNTERSTRIKE_DEMO_API APlayerCharacter : public ACharacter
@@ -18,8 +20,11 @@ class COUNTERSTRIKE_DEMO_API APlayerCharacter : public ACharacter
 	GENERATED_BODY()
 
 public:
-	// Sets default values for this character's properties
-	APlayerCharacter();
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Items")
+	TArray<FPickItem> PlayerBackPack;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Pickup")
+	class UDataTable* ItemDB;
 
 protected:
 	//创建摄像机组件，手臂组件，血量组件
@@ -59,6 +64,9 @@ protected:
 	float ZoomInterpSpeed;
 
 public:	
+	// Sets default values for this character's properties
+	APlayerCharacter();
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -66,6 +74,10 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	virtual FVector GetPawnViewLocation() const override;
+
+	UFUNCTION(BlueprintCallable, Category = "")
+	void AddItemToBackPackByID(FName ID);
+	
 
 protected:
 	// Called when the game starts or when spawned

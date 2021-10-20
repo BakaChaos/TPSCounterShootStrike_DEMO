@@ -7,6 +7,8 @@
 #include "BotGameState.h"
 #include "BotPlayerState.h"
 #include "HealthComponent.h"
+#include "PickupItem.h"
+#include "Engine/DataTable.h"
 
 ABotGameMode::ABotGameMode()
 {

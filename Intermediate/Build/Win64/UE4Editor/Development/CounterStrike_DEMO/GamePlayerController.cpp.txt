@@ -2,4 +2,7 @@ G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Ed
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\GamePlayerController.h
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Inc\CounterStrike_DEMO\GamePlayerController.generated.h
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\PickupItem.h
+F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\Engine/DataTable.h
+F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Public\DataTableUtils.h
+F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DataTable.generated.h
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Inc\CounterStrike_DEMO\PickupItem.generated.h

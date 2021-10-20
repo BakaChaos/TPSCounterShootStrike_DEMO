@@ -6,6 +6,11 @@ F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMo
 F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
 F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
 F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+g:\ueproject\bakachaos\tpscountershootstrike_demo\source\counterstrike_demo\public\PickupItem.h
+F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\Engine/DataTable.h
+F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Public\DataTableUtils.h
+F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DataTable.generated.h
+G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Inc\CounterStrike_DEMO\PickupItem.generated.h
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Inc\CounterStrike_DEMO\PlayerCharacter.generated.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFramework/PawnMovementComponent.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFramework/NavMovementComponent.h

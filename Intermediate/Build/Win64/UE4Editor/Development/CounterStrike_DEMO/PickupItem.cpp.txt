@@ -1,5 +1,8 @@
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Development\CounterStrike_DEMO\Definitions.CounterStrike_DEMO.h
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\PickupItem.h
+F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\Engine/DataTable.h
+F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Public\DataTableUtils.h
+F:\epic\UE_4.26\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DataTable.generated.h
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Intermediate\Build\Win64\UE4Editor\Inc\CounterStrike_DEMO\PickupItem.generated.h
 G:\UEProject\BakaChaos\TPSCounterShootStrike_DEMO\Source\CounterStrike_DEMO\Public\PlayerCharacter.h
 F:\epic\UE_4.26\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h

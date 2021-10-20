@@ -21,6 +21,8 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 	ENGINE_API UClass* Z_Construct_UClass_UDamageType_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AController_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+	COUNTERSTRIKE_DEMO_API UScriptStruct* Z_Construct_UScriptStruct_FPickItem();
+	ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
@@ -40,13 +42,55 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		P_THIS->OnHealthChanged(Z_Param_OwningHealthComp,Z_Param_Health,Z_Param_HealthDelta,Z_Param_DamageType,Z_Param_InstigatedBy,Z_Param_DamageCauser);
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(APlayerCharacter::execAddItemToBackPackByID)
+	{
+		P_GET_PROPERTY(FNameProperty,Z_Param_ID);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->AddItemToBackPackByID(Z_Param_ID);
+		P_NATIVE_END;
+	}
 	void APlayerCharacter::StaticRegisterNativesAPlayerCharacter()
 	{
 		UClass* Class = APlayerCharacter::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "AddItemToBackPackByID", &APlayerCharacter::execAddItemToBackPackByID },
 			{ "OnHealthChanged", &APlayerCharacter::execOnHealthChanged },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID_Statics
+	{
+		struct PlayerCharacter_eventAddItemToBackPackByID_Parms
+		{
+			FName ID;
+		};
+		static const UE4CodeGen_Private::FNamePropertyParams NewProp_ID;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FNamePropertyParams Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID_Statics::NewProp_ID = { "ID", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(PlayerCharacter_eventAddItemToBackPackByID_Parms, ID), METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID_Statics::NewProp_ID,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID_Statics::Function_MetaDataParams[] = {
+		{ "Category", "" },
+		{ "ModuleRelativePath", "Public/PlayerCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayerCharacter, nullptr, "AddItemToBackPackByID", nullptr, nullptr, sizeof(PlayerCharacter_eventAddItemToBackPackByID_Parms), Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_APlayerCharacter_OnHealthChanged_Statics
 	{
@@ -127,6 +171,15 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_PlayerBackPack_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PlayerBackPack_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_PlayerBackPack;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ItemDB_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ItemDB;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_PlayerCamera_MetaData[];
 #endif
@@ -182,6 +235,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_CounterStrike_DEMO,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_APlayerCharacter_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID, "AddItemToBackPackByID" }, // 24040460
 		{ &Z_Construct_UFunction_APlayerCharacter_OnHealthChanged, "OnHealthChanged" }, // 3124840608
 	};
 #if WITH_METADATA
@@ -191,6 +245,21 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		{ "ModuleRelativePath", "Public/PlayerCharacter.h" },
 	};
 #endif
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_PlayerBackPack_Inner = { "PlayerBackPack", nullptr, (EPropertyFlags)0x0000000000020000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FPickItem, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerCharacter_Statics::NewProp_PlayerBackPack_MetaData[] = {
+		{ "Category", "Items" },
+		{ "ModuleRelativePath", "Public/PlayerCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_PlayerBackPack = { "PlayerBackPack", nullptr, (EPropertyFlags)0x0010000000020005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerCharacter, PlayerBackPack), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_PlayerBackPack_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_PlayerBackPack_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerCharacter_Statics::NewProp_ItemDB_MetaData[] = {
+		{ "Category", "Pickup" },
+		{ "ModuleRelativePath", "Public/PlayerCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_ItemDB = { "ItemDB", nullptr, (EPropertyFlags)0x0010000000010001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerCharacter, ItemDB), Z_Construct_UClass_UDataTable_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_ItemDB_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_ItemDB_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerCharacter_Statics::NewProp_PlayerCamera_MetaData[] = {
 		{ "Category", "Components" },
@@ -290,6 +359,9 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APlayerCharacter_Statics::NewProp_ZoomInterpSpeed = { "ZoomInterpSpeed", nullptr, (EPropertyFlags)0x0020080000010001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APlayerCharacter, ZoomInterpSpeed), METADATA_PARAMS(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_ZoomInterpSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APlayerCharacter_Statics::NewProp_ZoomInterpSpeed_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APlayerCharacter_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_PlayerBackPack_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_PlayerBackPack,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_ItemDB,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_PlayerCamera,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_SpringArmComp,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APlayerCharacter_Statics::NewProp_HealthComp,
@@ -329,7 +401,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APlayerCharacter, 2860980834);
+	IMPLEMENT_CLASS(APlayerCharacter, 3921689970);
 	template<> COUNTERSTRIKE_DEMO_API UClass* StaticClass<APlayerCharacter>()
 	{
 		return APlayerCharacter::StaticClass();
