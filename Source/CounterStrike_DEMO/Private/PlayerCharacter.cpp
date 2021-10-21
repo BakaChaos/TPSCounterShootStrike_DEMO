@@ -89,6 +89,28 @@ void APlayerCharacter::AddItemToBackPackByID(FName ID)
 	}
 }
 
+void APlayerCharacter::CraftItem(FPickItem ItemA, FPickItem ItemB)
+{
+	
+	auto &Craft = ItemB.CraftCombinations[0];
+	//for (auto Craft : ItemB.CraftCombinations)
+//	{
+		if (Craft.ComponentID == ItemA.ItemID)
+		{
+			if (Craft.bDestroyItemA)
+			{
+				PlayerBackPack.RemoveSingle(ItemA);
+			}
+			if (Craft.bDestroyItemB)
+			{
+				PlayerBackPack.RemoveSingle(ItemB);
+			}
+			AddItemToBackPackByID(Craft.ProductID);
+			ReloadBackPack();
+		}
+//	}
+}
+
 // Called every frame
 void APlayerCharacter::Tick(float DeltaTime)
 {

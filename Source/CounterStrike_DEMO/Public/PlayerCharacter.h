@@ -75,9 +75,13 @@ public:
 
 	virtual FVector GetPawnViewLocation() const override;
 
-	UFUNCTION(BlueprintCallable, Category = "")
+	//当拾取物品时加入背包
+	UFUNCTION(BlueprintCallable, Category = "Pickup")
 	void AddItemToBackPackByID(FName ID);
-	
+	UFUNCTION(BlueprintImplementableEvent)
+	void ReloadBackPack();
+	UFUNCTION(BlueprintCallable, Category = "Pickup")
+	void CraftItem(FPickItem ItemA, FPickItem ItemB);
 
 protected:
 	// Called when the game starts or when spawned

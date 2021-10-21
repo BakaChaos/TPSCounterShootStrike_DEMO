@@ -12,6 +12,7 @@ class UHealthComponent;
 class UDamageType;
 class AController;
 class AActor;
+struct FPickItem;
 #ifdef COUNTERSTRIKE_DEMO_PlayerCharacter_generated_h
 #error "PlayerCharacter.generated.h already included, missing '#pragma once' in PlayerCharacter.h"
 #endif
@@ -21,15 +22,19 @@ class AActor;
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execOnHealthChanged); \
+	DECLARE_FUNCTION(execCraftItem); \
 	DECLARE_FUNCTION(execAddItemToBackPackByID);
 
 
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execOnHealthChanged); \
+	DECLARE_FUNCTION(execCraftItem); \
 	DECLARE_FUNCTION(execAddItemToBackPackByID);
 
 
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_EVENT_PARMS
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_CALLBACK_WRAPPERS
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAPlayerCharacter(); \
@@ -100,13 +105,17 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(APlayerCharacter); \
 	FORCEINLINE static uint32 __PPO__ZoomInterpSpeed() { return STRUCT_OFFSET(APlayerCharacter, ZoomInterpSpeed); }
 
 
-#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_17_PROLOG
+#define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_17_PROLOG \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_EVENT_PARMS
+
+
 #define TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
 	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_PRIVATE_PROPERTY_OFFSET \
 	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_SPARSE_DATA \
 	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_RPC_WRAPPERS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_CALLBACK_WRAPPERS \
 	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_INCLASS \
 	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_STANDARD_CONSTRUCTORS \
 public: \
@@ -119,6 +128,7 @@ public: \
 	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_PRIVATE_PROPERTY_OFFSET \
 	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_SPARSE_DATA \
 	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_CALLBACK_WRAPPERS \
 	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_INCLASS_NO_PURE_DECLS \
 	TPSCounterShootStrike_DEMO_Source_CounterStrike_DEMO_Public_PlayerCharacter_h_20_ENHANCED_CONSTRUCTORS \
 private: \

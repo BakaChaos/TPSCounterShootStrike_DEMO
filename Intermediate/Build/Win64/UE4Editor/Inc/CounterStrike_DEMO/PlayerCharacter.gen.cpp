@@ -17,11 +17,11 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 	COUNTERSTRIKE_DEMO_API UClass* Z_Construct_UClass_APlayerCharacter();
 	ENGINE_API UClass* Z_Construct_UClass_ACharacter();
 	UPackage* Z_Construct_UPackage__Script_CounterStrike_DEMO();
+	COUNTERSTRIKE_DEMO_API UScriptStruct* Z_Construct_UScriptStruct_FPickItem();
 	COUNTERSTRIKE_DEMO_API UClass* Z_Construct_UClass_UHealthComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UDamageType_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AController_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
-	COUNTERSTRIKE_DEMO_API UScriptStruct* Z_Construct_UScriptStruct_FPickItem();
 	ENGINE_API UClass* Z_Construct_UClass_UDataTable_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
@@ -42,6 +42,15 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		P_THIS->OnHealthChanged(Z_Param_OwningHealthComp,Z_Param_Health,Z_Param_HealthDelta,Z_Param_DamageType,Z_Param_InstigatedBy,Z_Param_DamageCauser);
 		P_NATIVE_END;
 	}
+	DEFINE_FUNCTION(APlayerCharacter::execCraftItem)
+	{
+		P_GET_STRUCT(FPickItem,Z_Param_ItemA);
+		P_GET_STRUCT(FPickItem,Z_Param_ItemB);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->CraftItem(Z_Param_ItemA,Z_Param_ItemB);
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(APlayerCharacter::execAddItemToBackPackByID)
 	{
 		P_GET_PROPERTY(FNameProperty,Z_Param_ID);
@@ -50,11 +59,17 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		P_THIS->AddItemToBackPackByID(Z_Param_ID);
 		P_NATIVE_END;
 	}
+	static FName NAME_APlayerCharacter_ReloadBackPack = FName(TEXT("ReloadBackPack"));
+	void APlayerCharacter::ReloadBackPack()
+	{
+		ProcessEvent(FindFunctionChecked(NAME_APlayerCharacter_ReloadBackPack),NULL);
+	}
 	void APlayerCharacter::StaticRegisterNativesAPlayerCharacter()
 	{
 		UClass* Class = APlayerCharacter::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "AddItemToBackPackByID", &APlayerCharacter::execAddItemToBackPackByID },
+			{ "CraftItem", &APlayerCharacter::execCraftItem },
 			{ "OnHealthChanged", &APlayerCharacter::execOnHealthChanged },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -78,8 +93,10 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID_Statics::Function_MetaDataParams[] = {
-		{ "Category", "" },
+		{ "Category", "Pickup" },
+		{ "Comment", "//??\xca\xb0\xc8\xa1??\xc6\xb7\xca\xb1???\xeb\xb1\xb3??\n" },
 		{ "ModuleRelativePath", "Public/PlayerCharacter.h" },
+		{ "ToolTip", "??\xca\xb0\xc8\xa1??\xc6\xb7\xca\xb1???\xeb\xb1\xb3??" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayerCharacter, nullptr, "AddItemToBackPackByID", nullptr, nullptr, sizeof(PlayerCharacter_eventAddItemToBackPackByID_Parms), Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID_Statics::Function_MetaDataParams)) };
@@ -89,6 +106,43 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_APlayerCharacter_CraftItem_Statics
+	{
+		struct PlayerCharacter_eventCraftItem_Parms
+		{
+			FPickItem ItemA;
+			FPickItem ItemB;
+		};
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ItemA;
+		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ItemB;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_APlayerCharacter_CraftItem_Statics::NewProp_ItemA = { "ItemA", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(PlayerCharacter_eventCraftItem_Parms, ItemA), Z_Construct_UScriptStruct_FPickItem, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UFunction_APlayerCharacter_CraftItem_Statics::NewProp_ItemB = { "ItemB", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(PlayerCharacter_eventCraftItem_Parms, ItemB), Z_Construct_UScriptStruct_FPickItem, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_APlayerCharacter_CraftItem_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APlayerCharacter_CraftItem_Statics::NewProp_ItemA,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_APlayerCharacter_CraftItem_Statics::NewProp_ItemB,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APlayerCharacter_CraftItem_Statics::Function_MetaDataParams[] = {
+		{ "Category", "Pickup" },
+		{ "ModuleRelativePath", "Public/PlayerCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayerCharacter_CraftItem_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayerCharacter, nullptr, "CraftItem", nullptr, nullptr, sizeof(PlayerCharacter_eventCraftItem_Parms), Z_Construct_UFunction_APlayerCharacter_CraftItem_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_CraftItem_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APlayerCharacter_CraftItem_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_CraftItem_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_APlayerCharacter_CraftItem()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_APlayerCharacter_CraftItem_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -157,6 +211,28 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_APlayerCharacter_OnHealthChanged_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_APlayerCharacter_ReloadBackPack_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_APlayerCharacter_ReloadBackPack_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/PlayerCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_APlayerCharacter_ReloadBackPack_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_APlayerCharacter, nullptr, "ReloadBackPack", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x08020800, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_APlayerCharacter_ReloadBackPack_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_APlayerCharacter_ReloadBackPack_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_APlayerCharacter_ReloadBackPack()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_APlayerCharacter_ReloadBackPack_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -235,8 +311,10 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_CounterStrike_DEMO,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_APlayerCharacter_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID, "AddItemToBackPackByID" }, // 24040460
+		{ &Z_Construct_UFunction_APlayerCharacter_AddItemToBackPackByID, "AddItemToBackPackByID" }, // 965258092
+		{ &Z_Construct_UFunction_APlayerCharacter_CraftItem, "CraftItem" }, // 1474473613
 		{ &Z_Construct_UFunction_APlayerCharacter_OnHealthChanged, "OnHealthChanged" }, // 3124840608
+		{ &Z_Construct_UFunction_APlayerCharacter_ReloadBackPack, "ReloadBackPack" }, // 1321441646
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APlayerCharacter_Statics::Class_MetaDataParams[] = {
@@ -401,7 +479,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APlayerCharacter, 3921689970);
+	IMPLEMENT_CLASS(APlayerCharacter, 3700060034);
 	template<> COUNTERSTRIKE_DEMO_API UClass* StaticClass<APlayerCharacter>()
 	{
 		return APlayerCharacter::StaticClass();

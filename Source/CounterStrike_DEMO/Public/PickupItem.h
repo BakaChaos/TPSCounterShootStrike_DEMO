@@ -57,6 +57,8 @@ public:
 		bool bCanUsed;
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Item")
 		TArray<FCraftingInfo> CraftCombinations;
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Item")
+		bool bCanDestroy;
 
 	bool operator == (const FPickItem& Item) const
 	{

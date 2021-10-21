@@ -93,6 +93,11 @@ static struct FScriptStruct_CounterStrike_DEMO_StaticRegisterNativesFPickItem
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CraftCombinations_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_CraftCombinations;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_bCanDestroy_MetaData[];
+#endif
+		static void NewProp_bCanDestroy_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bCanDestroy;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FStructParams ReturnStructParams;
 	};
@@ -176,6 +181,17 @@ static struct FScriptStruct_CounterStrike_DEMO_StaticRegisterNativesFPickItem
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UScriptStruct_FPickItem_Statics::NewProp_CraftCombinations = { "CraftCombinations", nullptr, (EPropertyFlags)0x0010000000010005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FPickItem, CraftCombinations), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UScriptStruct_FPickItem_Statics::NewProp_CraftCombinations_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FPickItem_Statics::NewProp_CraftCombinations_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FPickItem_Statics::NewProp_bCanDestroy_MetaData[] = {
+		{ "Category", "Item" },
+		{ "ModuleRelativePath", "Public/PickupItem.h" },
+	};
+#endif
+	void Z_Construct_UScriptStruct_FPickItem_Statics::NewProp_bCanDestroy_SetBit(void* Obj)
+	{
+		((FPickItem*)Obj)->bCanDestroy = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UScriptStruct_FPickItem_Statics::NewProp_bCanDestroy = { "bCanDestroy", nullptr, (EPropertyFlags)0x0010000000010005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(FPickItem), &Z_Construct_UScriptStruct_FPickItem_Statics::NewProp_bCanDestroy_SetBit, METADATA_PARAMS(Z_Construct_UScriptStruct_FPickItem_Statics::NewProp_bCanDestroy_MetaData, UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FPickItem_Statics::NewProp_bCanDestroy_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FPickItem_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FPickItem_Statics::NewProp_ItemID,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FPickItem_Statics::NewProp_ItemPickUp,
@@ -187,6 +203,7 @@ static struct FScriptStruct_CounterStrike_DEMO_StaticRegisterNativesFPickItem
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FPickItem_Statics::NewProp_bCanUsed,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FPickItem_Statics::NewProp_CraftCombinations_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FPickItem_Statics::NewProp_CraftCombinations,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FPickItem_Statics::NewProp_bCanDestroy,
 	};
 	const UE4CodeGen_Private::FStructParams Z_Construct_UScriptStruct_FPickItem_Statics::ReturnStructParams = {
 		(UObject* (*)())Z_Construct_UPackage__Script_CounterStrike_DEMO,
@@ -216,7 +233,7 @@ static struct FScriptStruct_CounterStrike_DEMO_StaticRegisterNativesFPickItem
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FPickItem_Hash() { return 2891686660U; }
+	uint32 Get_Z_Construct_UScriptStruct_FPickItem_Hash() { return 4017741410U; }
 
 static_assert(std::is_polymorphic<FCraftingInfo>() == std::is_polymorphic<FTableRowBase>(), "USTRUCT FCraftingInfo cannot be polymorphic unless super FTableRowBase is polymorphic");
 
